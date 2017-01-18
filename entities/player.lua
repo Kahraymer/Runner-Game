@@ -3,8 +3,10 @@ Player.static.size = vector(10, 20)
 
 -- These are the primary constants that control the path of the jump.
 Player.static.MAX_JUMP_HEIGHT = 30 -- The height if the jump when the button is pressed the whole time.
-Player.static.MIN_JUMP_HEIGHT = 5 -- This height of the jump if the button is immediately released after being pressed.
 Player.static.TIME_TO_APEX = 0.5 -- The time to the maximum height of the jump.
+Player.static.MIN_JUMP_HEIGHT = 5 -- This height of the jump if the button is immediately released after being pressed.
+
+Player.static.TIME_BEFORE_MIN_SPEED = 0.05 -- The time before the velocity can be reduced when the jump is released.
 
 -- The physics constants are derived from the jump ARC info above.
 Player.static.GRAVITY = 2 * Player.MAX_JUMP_HEIGHT / (Player.TIME_TO_APEX ^ 2)
@@ -48,6 +50,7 @@ function InAir:enteredState(velocity)
   self.y = 0
   self.velocity = velocity or 0
   self.rebound = false
+  self.airtime = 0
 end
 
 function InAir:jumpPressed()
@@ -62,9 +65,10 @@ end
 
 function InAir:update(dt)
   Player.update(self, dt)
+  self.airtime = self.airtime + dt
 
   -- If the jump button has been released, terminate the velocity early.
-  if self.isJumpPressed == false then
+  if self.isJumpPressed == false and self.airtime > Player.TIME_BEFORE_MIN_SPEED then
     self.velocity = math.max(self.velocity, Player.JUMP_TERMINATION_SPEED)
   end
 
