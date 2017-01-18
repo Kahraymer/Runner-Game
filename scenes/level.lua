@@ -34,9 +34,14 @@ function Level:update(dt)
 end
 
 function Level:keypressed(key, scancode, isrepeat)
-  if key == "space" then self.player:jump() end
+  if key == "space" then self.player:jumpPressed() end
 end
 
-function Level:touchpressed(id, x, y, dx, dy, pressure) self.player:jump() end
+function Level:keyreleased(key, scancode, isrepeat)
+  if key == "space" then self.player:jumpReleased() end
+end
+
+function Level:touchpressed(id, x, y, dx, dy, pressure) self.player:jumpPressed() end
+function Level:touchreleased(id, x, y, dx, dy, pressure) self.player:jumpReleased() end
 
 return Level

@@ -19,6 +19,7 @@ end
 
 function Scene:update(dt) end
 function Scene:keypressed(key, scancode, isrepeat) end
+function Scene:keyreleased(key, scancode, isrepeat) end
 function Scene:touchpressed(id, x, y, dx, dy, pressure) end
 
 return Scene

@@ -46,6 +46,9 @@ end
 function love.keypressed(...)
   if Scene.currentScene ~= nil then Scene.currentScene:keypressed(...) end
 end
+function love.keyreleased(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:keyreleased(...) end
+end
 function love.touchpressed(...)
   if Scene.currentScene ~= nil then Scene.currentScene:touchpressed(...) end
 end
