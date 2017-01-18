@@ -42,3 +42,10 @@ function love.update(dt)
   -- Update the current scene.
   if Scene.currentScene ~= nil then Scene.currentScene:update(dt) end
 end
+
+function love.keypressed(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:keypressed(...) end
+end
+function love.touchpressed(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:touchpressed(...) end
+end
