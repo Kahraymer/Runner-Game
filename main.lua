@@ -25,7 +25,7 @@ HC = require 'external.hardoncollider'
 
 -- Load in our Scene class.
 Scene = require "scene"
-Scene.currentScene = Scene()
+Scene.currentScene = require("scenes.level")()
 
 function love.draw()
   -- This function is called every frame by LOVE. All drawing of objects should
