@@ -1,4 +1,10 @@
- -- An object oriented programming system for Lua.
+--[[
+This file is the main entry point for the game. Hopefully it shouldn't be edited
+that frequently, since it should just import a bunch of stuff and then
+delegate to the current scene.
+]]--
+
+-- An object oriented programming system for Lua.
 class = require "external.middleclass"
 
  -- A vector utilities class.
