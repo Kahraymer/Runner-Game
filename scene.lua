@@ -17,7 +17,8 @@ function Scene:draw()
     love.graphics.getWidth(), "center")
 end
 
-function Scene:update()
-end
+function Scene:update(dt) end
+function Scene:keypressed(key, scancode, isrepeat) end
+function Scene:touchpressed(id, x, y, dx, dy, pressure) end
 
 return Scene
