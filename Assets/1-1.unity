@@ -279,7 +279,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1814267107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.412, y: -0.535, z: 0}
+  m_LocalPosition: {x: 0.425, y: -0.509, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2045714206}
@@ -354,7 +354,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  runSpeed: 2
+  runSpeed: 0
+  minJumpForceTime: 0.2
+  maxJumpForceTime: 0.5
+  jumpVelocity: 5
 --- !u!212 &2045714205
 SpriteRenderer:
   m_ObjectHideFlags: 0
