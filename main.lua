@@ -25,7 +25,7 @@ HC = require 'external.hardoncollider'
 
 -- Load in our Scene class.
 Scene = require "scene"
-Scene.currentScene = Scene()
+Scene.currentScene = require("scenes.level")()
 
 function love.draw()
   -- This function is called every frame by LOVE. All drawing of objects should
@@ -45,6 +45,9 @@ end
 
 function love.keypressed(...)
   if Scene.currentScene ~= nil then Scene.currentScene:keypressed(...) end
+end
+function love.keyreleased(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:keyreleased(...) end
 end
 function love.touchpressed(...)
   if Scene.currentScene ~= nil then Scene.currentScene:touchpressed(...) end
