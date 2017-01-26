@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  productGUID: e3143af47d3fd41c283d427555d2ba44
+  productGUID: f4d68c3862f4b438f8456a37b991b509
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: runner-unity
+  productName: runner
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -282,7 +282,7 @@ PlayerSettings:
   ps4ApplicationParam4: 0
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: QzldVI5ZuGXbEWRK5RhRXdCdG5nG5azd
+  ps4Passcode: WqBlQ9wQj99nsQzldVI5ZuGXbEWRK5Rh
   ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
@@ -326,7 +326,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: NMK66MuCV6GXi5xr84P2R391UXaLHbav
+  psp2PackagePassword: RXdCdG5nG5azdNMK66MuCV6GXi5xr84P
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -378,14 +378,14 @@ PlayerSettings:
   additionalIl2CppArgs: 
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: runner-unity
+  metroPackageName: runner
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: runner-unity
+  metroApplicationDescription: runner
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -452,10 +452,8 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled:
-    Collab: 1
-    UNet: 1
-  cloudProjectId: 97b714b2-6435-465d-af5c-6a824106ff06
-  projectName: runner-unity
-  organizationId: cs-194w-runner-game-team
+  cloudServicesEnabled: {}
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0

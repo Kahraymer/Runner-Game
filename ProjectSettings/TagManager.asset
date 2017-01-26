@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - BackgroundSky
   - 
   - 
-  - ForegroundGround
+  - 
+  - 
   - 
   - 
   - 
@@ -40,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BackgroundSky
-    uniqueID: 1092750623
-    locked: 0
-  - name: ForegroundGround
-    uniqueID: 656193159
     locked: 0
