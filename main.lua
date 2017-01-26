@@ -23,13 +23,29 @@ Stateful = require "external.stateful"
 -- A collision detection library with a punny name.
 HC = require 'external.hardoncollider'
 
+-- Load in our Scene class.
+Scene = require "scene"
+Scene.currentScene = Scene()
+
 function love.draw()
   -- This function is called every frame by LOVE. All drawing of objects should
   -- happen within the context of this function.
-  love.graphics.print("Hello World", 20, 40 + 10*math.sin(love.timer.getTime()))
+
+  -- Draw the current scene.
+  if Scene.currentScene ~= nil then Scene.currentScene:draw() end
 end
 
 function love.update(dt)
   -- This function is called every frame by LOVE. It should be used to update entities.
   lurker.update() -- Scan for live code updates.
+
+  -- Update the current scene.
+  if Scene.currentScene ~= nil then Scene.currentScene:update(dt) end
+end
+
+function love.keypressed(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:keypressed(...) end
+end
+function love.touchpressed(...)
+  if Scene.currentScene ~= nil then Scene.currentScene:touchpressed(...) end
 end
