@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BasicRunning : MonoBehaviour {
 
+    public float runningVelocity = 1;
+   // public float fallingVelocity = 1;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +14,6 @@ public class BasicRunning : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(5f * Time.deltaTime, 0f, 0f);
+        transform.Translate(runningVelocity * Time.deltaTime, 0f, 0f);
     }
 }
