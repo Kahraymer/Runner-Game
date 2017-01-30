@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicRunning : MonoBehaviour {
 
-    public float runningVelocity = 1;
+    public float runningVelocity = 3;
    // public float fallingVelocity = 1;
 
 	// Use this for initialization
