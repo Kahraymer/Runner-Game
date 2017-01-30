@@ -290,6 +290,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1137020218398484, guid: 606b968a2c578434c93ce98d62563107, type: 2}
+      propertyPath: m_Name
+      value: PC
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 606b968a2c578434c93ce98d62563107, type: 2}
@@ -373,7 +377,7 @@ GameObject:
   - component: {fileID: 1197516561}
   - component: {fileID: 1197516562}
   m_Layer: 0
-  m_Name: PC (Player Character)
+  m_Name: PC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
