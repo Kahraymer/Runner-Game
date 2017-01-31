@@ -17,9 +17,10 @@ public class CameraController : MonoBehaviour {
 
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = player.transform.position + offset;
+		// If you want the camera to follow jumps, use the line below:
+		// transform.position = player.transform.position + offset;
 
 		// If you don't want the camera to follow jumps, use the line below instead:
-		// transform.position = new Vector3 (player.transform.position.x, 0, 0) + offset;
+		transform.position = new Vector3 (player.transform.position.x, 0, 0) + offset;
 	}
 }
