@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PCPosition : MonoBehaviour {
 
+    public class pc_object {
+
+    }
+
     public int pc_x_get() {
         return (int)GetComponent<Transform>().position.x;
     }

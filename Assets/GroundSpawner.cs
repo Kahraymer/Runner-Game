@@ -37,7 +37,7 @@ public class GroundSpawner : MonoBehaviour {
             //g.transform.position.Set(curPos, 0, 0);
             //g.transform.position.z = 0;
 
-            lastpos = curPos + offset;
+            lastpos = curPos;
         } 
 	}
 }
