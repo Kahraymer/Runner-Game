@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 		grounded = Physics2D.OverlapArea (groundCheckTopLeft.position, groundCheckBottomRight.position, groundMask);
 
 
-		if (!grounded && rigidBody.velocity.y < 0 && Input.GetButtonDown ("Jump")) {
+		if (!grounded && rigidBody.velocity.y < 0 && (Input.GetButtonDown ("Jump")))  {
 			rebound = true;
 		}
 

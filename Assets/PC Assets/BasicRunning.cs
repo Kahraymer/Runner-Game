@@ -22,6 +22,8 @@ public class BasicRunning : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // transform.Translate(startingSpeed * Time.deltaTime, 0f, 0f);
+
+		// TODO: Is this making a new velocity vector every time? 
         pcRigidbody2D.velocity = new Vector2(startingSpeed, pcRigidbody2D.velocity.y);
 
     }
