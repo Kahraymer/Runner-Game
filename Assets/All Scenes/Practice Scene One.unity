@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175245027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.38, y: 2, z: -10}
+  m_LocalPosition: {x: 4.75, y: 1.54, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1197516558}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 279183650}
-  background: {fileID: 1085296739}
+  background: {fileID: 175245027}
 --- !u!1 &188437700
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,8 +282,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279183650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.16, y: 0.33, z: 0}
+  m_LocalScale: {x: 1.46, y: 2.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1197516558}
   m_RootOrder: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   groundCheckBottomRight: {fileID: 0}
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   runSpeed: 10
   minJumpForceTime: 0
   maxJumpForceTime: 0
@@ -415,11 +415,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff6887e6eba511146854015c50bb5e6e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1085296739 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1683321024845518, guid: ff6887e6eba511146854015c50bb5e6e,
-    type: 2}
-  m_PrefabInternal: {fileID: 489084667}
 --- !u!1 &1174211675
 GameObject:
   m_ObjectHideFlags: 0

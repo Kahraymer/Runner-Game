@@ -6,38 +6,70 @@ public class GroundSpawner : MonoBehaviour {
 
     
     private GameObject pc; //Link to the PC
-    private int lastpos; //Last position of the PC
 
-    public Transform brownprefab;
+	private float startOfBlock;
+	private float endOfBlock;
+	private Vector3 blockSize;
+	private ArrayList groundBlocks;
+
+
+	// To be used as a reference for how newly spawned blocks should be
+    public GameObject brownprefab;
     
 
     
 
 	// Use this for initialization
 	void Start () {
-        //last_pc_x = pc_x();
         pc = GameObject.Find("PC");
-        lastpos = (int) pc.transform.position.x;
+		groundBlocks = new ArrayList();
+
+		// Make new ground block
+		GameObject newBlock = Instantiate(brownprefab);
+		//			Transform g = newBlock.transform;
+
+		// Set the new ground block to be exactly where the example is 
+		newBlock.transform.localPosition = brownprefab.transform.position;
+		groundBlocks.Add (newBlock);
+
+		startOfBlock = brownprefab.transform.position.x;
+		blockSize = GetComponent<BoxCollider2D> ().bounds.size;
+		endOfBlock = startOfBlock + blockSize.x;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //  if (in)
         int offset = 3;//some offset depending on screensize
-        int curPos = (int) pc.transform.position.x;
-        if (curPos - lastpos > 1) {
-           // Debug.Log("cur" + curPos);
-            //Debug.Log("last" + lastpos);
+		Vector3 curPos = pc.transform.position;
 
- //           Debug.Log("Make Ground.");
-            Transform g = (Transform)Instantiate(brownprefab);
-           // float x = (float)curPos;
-            Vector3 pos = new Vector3(curPos + offset, -1, 0);
-            g.localPosition = pos;
-            //g.transform.position.Set(curPos, 0, 0);
-            //g.transform.position.z = 0;
+		
+		// If the pc is within 3 units of the end of the block, make a new block
+		// 3 should eventually be replaced with the size of the screen
+		if (endOfBlock - curPos.x < (3+offset)) {
 
-            lastpos = curPos;
+			// Make new ground block
+			GameObject newBlock = Instantiate(brownprefab);
+//			Transform g = newBlock.transform;
+
+			// Set the new ground block to be exactly where the last one left off
+			Vector3 pos = new Vector3(endOfBlock, brownprefab.transform.position.y, brownprefab.transform.position.z);
+			newBlock.transform.localPosition = pos;
+			groundBlocks.Add (newBlock);
+
+			// Removes first block in array if off the screen
+			GameObject firstBlock = (GameObject) groundBlocks[0];
+			Transform t = firstBlock.transform;
+			if (t.position.x + blockSize.x < curPos.x - offset) {
+				groundBlocks.RemoveAt (0);
+				Destroy (firstBlock);
+//				Debug.Log ("Block is out");
+			}
+
+//			Debug.Log (groundBlocks.Count);
+
+			// Update local variables
+			startOfBlock = pos.x;
+			endOfBlock = startOfBlock + blockSize.x;
         } 
 	}
 }

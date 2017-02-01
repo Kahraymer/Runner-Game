@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// THIS IS AN UNUSED SCRIPT AND SHOULD BE DELETED
+
 public class PCPosition : MonoBehaviour {
 
     public class pc_object {
