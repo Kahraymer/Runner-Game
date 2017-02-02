@@ -1,3 +1,6 @@
+# Ignore pngs that were automatically generated from SVG files.
+*.svg.png
+
 .DS_Store
 
 /[Ll]ibrary/
