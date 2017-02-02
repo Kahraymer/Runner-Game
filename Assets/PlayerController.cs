@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		this.rigidBody = GetComponent<Rigidbody2D> ();
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 		if (jumpPhase == JumpPhase.Grounded && (Input.GetButtonDown ("Jump") || rebound)) {
