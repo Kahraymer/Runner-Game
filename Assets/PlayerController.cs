@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour {
 	public Transform groundCheckBottomRight;
 	public LayerMask groundMask;
 
-	public float runSpeed;
-	public float minJumpForceTime;
-	public float maxJumpForceTime;
+	[Tooltip("The height of a max jump.")]
+	public float maxJumpHeight;
 
-	// The amount of force to apply to the player when jumping.
-	public float jumpVelocity;
+	[Tooltip("The time to apex of a max jump.")]
+	public float maxJumpTimeToApex;
+
+	[Tooltip("The minimum amount of time before a jump can be terminated.")]
+	public float minJumpTime;
 
 	private Rigidbody2D rigidBody;
 
@@ -22,11 +24,10 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	private float airTime = 0.0f;
 
-	private bool grounded = false;
-	private bool jumping = false;
-	private bool rebound = true;
+	private enum JumpPhase { Grounded, PreJump, Rising, TerminatedRising, Falling }
+	private JumpPhase jumpPhase = JumpPhase.Grounded;
 
-	private bool terminatedJump = false;
+	private bool rebound = false;
 
 	// Use this for initialization
 	void Start () {
@@ -35,49 +36,51 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (jumpPhase == JumpPhase.Grounded && (Input.GetButtonDown ("Jump") || rebound)) {
+			rebound = false;
+			jumpPhase = JumpPhase.PreJump;
+		}
+
+		if (jumpPhase == JumpPhase.Falling && Input.GetButtonDown ("Jump")) {
+			rebound = true;
+		}
 	}
 
 	void FixedUpdate() {
-		// Continue to run to the right.
-		rigidBody.velocity = new Vector2 (runSpeed, rigidBody.velocity.y);
-
-		// Check if the player is grounded.
-		grounded = Physics2D.OverlapArea (groundCheckTopLeft.position, groundCheckBottomRight.position, groundMask);
-
-
-		if (!grounded && rigidBody.velocity.y < 0 && (Input.GetButtonDown ("Jump")))  {
-			rebound = true;
+		float gravity = (-2 * maxJumpHeight) / (maxJumpTimeToApex * maxJumpTimeToApex);
+		if (jumpPhase == JumpPhase.TerminatedRising) {
+			gravity *= 3;
 		}
 
-		if (!jumping) {
-			if (grounded && (Input.GetButtonDown ("Jump") || rebound)) {
-				jumping = true;
-				rebound = false;
-				terminatedJump = false;
-			}
-		}
+		float jumpVelocity = (2 * maxJumpHeight) / maxJumpTimeToApex;
 
-		if (jumping) {
-			// If the airtime is greater than 0, but we are now grounded then the jump has ended.
-			if (airTime > 0.0f && grounded)
-				jumping = false;
-			
-			if (airTime < minJumpForceTime) {
-				rigidBody.velocity = new Vector2(0, jumpVelocity);
-				if (!Input.GetButton ("Jump"))
-					terminatedJump = true;
- 			}
+		rigidBody.AddForce (new Vector2(0, gravity));
 
-			if (airTime < maxJumpForceTime && !terminatedJump) {
-				rigidBody.velocity = new Vector2(0, jumpVelocity);
-			}
-		}
-
-		// Update the air timer depending on whether or not the player is grounded.
-		if (grounded)
+		if (jumpPhase == JumpPhase.Grounded) {
 			airTime = 0.0f;
-		else
+		} else {
 			airTime += Time.fixedDeltaTime;
+		}
+
+		if (jumpPhase == JumpPhase.PreJump) {
+			rigidBody.velocity = new Vector2 (rigidBody.velocity.x, jumpVelocity);
+			jumpPhase = JumpPhase.Rising;
+		}
+
+		if (jumpPhase == JumpPhase.Rising) {
+			if (airTime >= minJumpTime && !Input.GetButton("Jump")) {
+				jumpPhase = JumpPhase.TerminatedRising;
+			}
+		}
+
+		if (rigidBody.velocity.y < 0) {
+			jumpPhase = JumpPhase.Falling;
+		}
+
+		if (jumpPhase == JumpPhase.Falling) {
+			if (Physics2D.OverlapArea (groundCheckTopLeft.position, groundCheckBottomRight.position, groundMask)) {
+				jumpPhase = JumpPhase.Grounded;
+			}
+		}
 	}
 }

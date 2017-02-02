@@ -368,10 +368,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  runSpeed: 5
-  minJumpForceTime: 0.03
-  maxJumpForceTime: 0.5
-  jumpVelocity: 8
+  maxJumpHeight: 5
+  maxJumpTimeToApex: 0.5
+  minJumpTime: 0.1
 --- !u!212 &2045714205
 SpriteRenderer:
   m_ObjectHideFlags: 0
