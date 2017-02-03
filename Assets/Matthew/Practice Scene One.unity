@@ -330,7 +330,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279183650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1561435d2c93d4951b34f35fb7f49e48, type: 3}
   m_Name: 
@@ -340,10 +340,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  runSpeed: 10
-  minJumpForceTime: 0
-  maxJumpForceTime: 0
-  jumpVelocity: 0
+  maxJumpHeight: 0
+  maxJumpTimeToApex: 0
+  minJumpTime: 0
 --- !u!1 &369670033
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4159267239139140, guid: ff6887e6eba511146854015c50bb5e6e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 4159267239139140, guid: ff6887e6eba511146854015c50bb5e6e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -412,9 +411,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4159267239139140, guid: ff6887e6eba511146854015c50bb5e6e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61884861623784422, guid: ff6887e6eba511146854015c50bb5e6e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff6887e6eba511146854015c50bb5e6e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &758488950 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1683321024845518, guid: ff6887e6eba511146854015c50bb5e6e,
+    type: 2}
+  m_PrefabInternal: {fileID: 489084667}
 --- !u!1 &1174211675
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +452,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1174211675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: -2, y: 0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1547923931}
@@ -457,9 +470,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.975688, y: -1.0193632}
+  m_Offset: {x: 2.02, y: -0.64}
   serializedVersion: 2
-  m_Size: {x: 4.951377, y: 0.5078707}
+  m_Size: {x: 5, y: 0.5078707}
 --- !u!114 &1174211679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,8 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad4f9f559ea24f48a4175eb05bc5185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brownprefab: {fileID: 4159267239139140, guid: ff6887e6eba511146854015c50bb5e6e,
-    type: 2}
+  brownprefab: {fileID: 758488950}
 --- !u!1 &1197516557
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,10 +539,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
-  runSpeed: 0
-  minJumpForceTime: 0
-  maxJumpForceTime: 0
-  jumpVelocity: 0
+  maxJumpHeight: 0
+  maxJumpTimeToApex: 0
+  minJumpTime: 0
 --- !u!114 &1197516560
 MonoBehaviour:
   m_ObjectHideFlags: 0
