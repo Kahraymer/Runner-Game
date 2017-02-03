@@ -1,7 +1,3 @@
-# Ignore pngs that were automatically generated from SVG files.
-*.svg.png
-*.svg.png.meta
-
 .DS_Store
 
 /[Ll]ibrary/
