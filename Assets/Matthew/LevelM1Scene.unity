@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 1842876870}
-  greendirt: {fileID: 1956299924383430, guid: 359e83eb27e39174aac6ab2f1c51ea35, type: 2}
-  column: {fileID: 1995325719274982, guid: 7ac2c04e1e4c5a44dbefde07454d89dc, type: 2}
+  greendirt: {fileID: 1998312698211712, guid: 359e83eb27e39174aac6ab2f1c51ea35, type: 2}
+  column: {fileID: 1424419350696258, guid: 7ac2c04e1e4c5a44dbefde07454d89dc, type: 2}
 --- !u!1 &1706839069
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +303,25 @@ Transform:
   m_PrefabParentObject: {fileID: 4833800698963722, guid: 90e673c57cf97cf429af05b9fafa5302,
     type: 2}
   m_PrefabInternal: {fileID: 1753154189}
+--- !u!114 &1842876872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1842876870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8035c7eaaa9df46a1380f3853d0759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckTopLeft: {fileID: 0}
+  groundCheckBottomRight: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  maxJumpHeight: 10
+  maxJumpTimeToApex: 2
+  minJumpTime: 1
 --- !u!114 &1842876875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,5 +333,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a4b2bf047a046488786c0b2962b1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpeed: 0.05
+  startingSpeed: 0.1
   pcRigidbody2D: {fileID: 0}
+--- !u!114 &1842876877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1842876870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1690312454, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!20 &1842876878
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1842876870}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0

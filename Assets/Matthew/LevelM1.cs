@@ -14,7 +14,7 @@ public class LevelM1 : WorldBaseM {
       //  pc = Instantiate( Quaternion.identity)
         addGround();
         addColumns();
-        levelObjects.Add(makeWorldEntry(new Vector3(30, 2, 0), column));
+        levelObjects.Add(makeWorldEntry(new Vector3(30, 2, 0), column));//needs to be jumped over
         WorldUpdate();
     }
 
