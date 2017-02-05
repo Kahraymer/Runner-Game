@@ -6,7 +6,7 @@ public class LevelM1 : WorldBaseM {
 
     public GameObject greendirt;
     public GameObject column;
-    private int column_y = 5;
+    private int column_y = 4;
 
 
 	// Use this for initialization
@@ -14,6 +14,7 @@ public class LevelM1 : WorldBaseM {
       //  pc = Instantiate( Quaternion.identity)
         addGround();
         addColumns();
+        levelObjects.Add(makeWorldEntry(new Vector3(30, 2, 0), column));
         WorldUpdate();
     }
 
@@ -28,7 +29,6 @@ public class LevelM1 : WorldBaseM {
             if (i % 10 == 0) {
                 levelObjects.Add(makeWorldEntry(new Vector3(i, column_y, 0), column));
             }
-
         }
     }
 	
