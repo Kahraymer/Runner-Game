@@ -9,9 +9,11 @@ public class CameraController : MonoBehaviour {
 	public GameObject background;
 
 	private Vector3 offset;
+	private int zoomout = 3;
 
 	// Use this for initialization
 	void Start () {
+		background.transform.position = player.transform.position + new Vector3 (2, -1, -zoomout);
 		offset = transform.position + player.transform.position;
 	}
 
@@ -21,6 +23,6 @@ public class CameraController : MonoBehaviour {
 		// transform.position = player.transform.position + offset;
 
 		// If you don't want the camera to follow jumps, use the line below instead:
-		transform.position = new Vector3 (player.transform.position.x, 0, 0) + offset;
+		background.transform.position = new Vector3 (player.transform.position.x, 0, 0) + offset;
 	}
 }

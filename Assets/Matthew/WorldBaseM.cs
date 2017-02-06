@@ -35,6 +35,7 @@ public class WorldBaseM: MonoBehaviour {
 		foreach (WorldEntry entry in levelObjects) {
 			if (entry.loc.x < pcPos.x + spawningOffset) {
 				GameObject myObj = Instantiate (entry.obj, entry.loc, Quaternion.identity);
+				Debug.Log ("Instantiated an object");
 				levelObjects.Remove (entry);
 			}
 		}

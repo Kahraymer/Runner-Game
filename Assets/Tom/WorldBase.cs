@@ -11,47 +11,35 @@ public class WorldBase : MonoBehaviour {
 		public float offset; 	// Possibly unnecessary, optimizes for ints
 	}
 
-	public List<WorldEntry> levelObjects = new List<WorldEntry> ();
+	private List<WorldEntry> levelObjects; // = new List<WorldEntry> ();
+	public GameObject pc;
 	private int spawningOffset;
 
-	// The following two objects should eventually be in the level script
-	public GameObject pc;
-	public GameObject ground;
 
 	// Use this for initialization
-	void Start () {
-		spawningOffset = 15;
-		WorldStart ();
+	public void Start () {
+
 	}
 
 
-	public void WorldStart () {
+	public void WorldStart (List<WorldEntry> level) {
+		spawningOffset = 15;
 
-		// The following for-loop (i.e. level construction) should be done in the level script
-		for (int i = 0; i < 5; i++) {
-			WorldEntry entry = new WorldEntry ();
-
-			float blockWidth = ground.GetComponent<BoxCollider2D> ().bounds.size.x;
-
-			entry.loc = new Vector3 (4 + i*blockWidth, 0, 0);
-			entry.obj = ground;
-			levelObjects.Add (entry);
-		}
+		levelObjects = level;
 
 
-
-		// This for-loop is in the right spot :)
-		for (int i = 0; i < levelObjects.Count; i++) {
-			WorldEntry thisentry = levelObjects[i];
-
-			// If the object is supposed to be in the first screen, instantiate it.
+		// Instantiate everything that should be on screen or will be soon
+		while (levelObjects.Count > 0) {
+			WorldEntry thisentry = levelObjects [0];
 			if (thisentry.loc.x < spawningOffset) {
-				Debug.Log ("Instantiate!");
-				GameObject myObj = Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
-				levelObjects.RemoveAt (i);
-				i -= 1;
+//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
+				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
+				levelObjects.RemoveAt (0);
+			} else {
+				break;
 			}
 		}
+
 	}
 	
 	// Update is called once per frame
@@ -63,13 +51,18 @@ public class WorldBase : MonoBehaviour {
 		Vector3 pcPos = pc.transform.position;
 		// TODO: Make pcPos ints, not floats ?
 
-		foreach (WorldEntry entry in levelObjects) {
-			if (entry.loc.x < pcPos.x + spawningOffset) {
-				GameObject myObj = Instantiate (entry.obj, entry.loc, Quaternion.identity);
-				levelObjects.Remove (entry);
+
+		// Instantiate anything that is going to be on screen soon
+		while (levelObjects.Count > 0) {
+			WorldEntry thisentry = levelObjects [0];
+			if (thisentry.loc.x < pcPos.x + spawningOffset) {
+//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
+				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
+				levelObjects.RemoveAt (0);
+			} else {
+				break;
 			}
 		}
-
-
+			
 	}
 }
