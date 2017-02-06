@@ -18,7 +18,6 @@ public class WorldBase : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
-		Debug.Log ("WORLDBASE START");
 
 	}
 
@@ -29,12 +28,12 @@ public class WorldBase : MonoBehaviour {
 		levelObjects = level;
 
 
-		// This for-loop is in the right spot :)
+		// Instantiate everything that should be on screen or will be soon
 		while (levelObjects.Count > 0) {
 			WorldEntry thisentry = levelObjects [0];
 			if (thisentry.loc.x < spawningOffset) {
-				Debug.Log ("Instantiate! at " + thisentry.loc.x);
-				GameObject myObj = Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
+//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
+				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
 				levelObjects.RemoveAt (0);
 			} else {
 				break;
@@ -52,11 +51,13 @@ public class WorldBase : MonoBehaviour {
 		Vector3 pcPos = pc.transform.position;
 		// TODO: Make pcPos ints, not floats ?
 
+
+		// Instantiate anything that is going to be on screen soon
 		while (levelObjects.Count > 0) {
 			WorldEntry thisentry = levelObjects [0];
 			if (thisentry.loc.x < pcPos.x + spawningOffset) {
-				Debug.Log ("Instantiate! at " + thisentry.loc.x);
-				GameObject myObj = Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
+//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
+				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
 				levelObjects.RemoveAt (0);
 			} else {
 				break;
