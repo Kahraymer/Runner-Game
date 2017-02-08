@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2045714201}
-  background: {fileID: 1719107243}
+  frame: {fileID: 600331555}
 --- !u!1 &697733996
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpeed: 10
-  pcRigidbody2D: {fileID: 0}
 --- !u!114 &2045714209
 MonoBehaviour:
   m_ObjectHideFlags: 0
