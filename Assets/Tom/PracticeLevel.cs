@@ -20,11 +20,12 @@ public class PracticeLevel : MonoBehaviour {
 		blockentry.obj = column;
 		thisLevel.Add(blockentry);
 
+		float blockWidth = ground.GetComponent<BoxCollider2D> ().size.x; //   bounds.size.x;
+
 		// Adding 80 brown_grounds to level
 		for (int i = 0; i < 80; i++) {
 			WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
 
-			float blockWidth = ground.GetComponent<BoxCollider2D> ().size.x; //   bounds.size.x;
 			entry.loc = new Vector3 (i*blockWidth, 0, 0);
 			entry.obj = ground;
 			thisLevel.Add (entry);
