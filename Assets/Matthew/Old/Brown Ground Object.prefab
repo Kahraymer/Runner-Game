@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212480288623967512}
   - component: {fileID: 61884861623784422}
   - component: {fileID: 114335152986231582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brown Ground Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}

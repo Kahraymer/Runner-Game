@@ -9,11 +9,11 @@ public class CameraController : MonoBehaviour {
 	public GameObject frame;
 
 	private Vector3 offset;
-	private int zoomout = 3;
+	private int zoomout = 7;
 
 	// Use this for initialization
 	void Start () {
-		frame.transform.position = player.transform.position + new Vector3 (2, -1, -zoomout);
+		frame.transform.position = player.transform.position + new Vector3 (6, 2, -zoomout);
 		offset = transform.position + player.transform.position;
 	}
 
