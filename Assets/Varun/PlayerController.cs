@@ -49,13 +49,14 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate() {
 		float gravity = (-2 * maxJumpHeight) / (maxJumpTimeToApex * maxJumpTimeToApex);
+
 		if (jumpPhase == JumpPhase.TerminatedRising) {
 			gravity *= 3;
 		}
 
 		float jumpVelocity = (2 * maxJumpHeight) / maxJumpTimeToApex;
 
-		rigidBody.AddForce (new Vector2(0, gravity));
+		rigidBody.AddForce (new Vector2(0, gravity) - Physics2D.gravity);
 
 		if (jumpPhase == JumpPhase.Grounded) {
 			airTime = 0.0f;
