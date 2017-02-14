@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212690766960813300}
   - component: {fileID: 61686002287226458}
   - component: {fileID: 114245174672922750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassDirtObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c1779847f5ea94793af54634aeb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pc: {fileID: 0}
 --- !u!212 &212690766960813300
 SpriteRenderer:
   m_ObjectHideFlags: 1
