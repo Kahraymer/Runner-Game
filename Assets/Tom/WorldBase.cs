@@ -12,7 +12,7 @@ public class WorldBase : MonoBehaviour {
 	}
 
 	private List<WorldEntry> levelObjects; // = new List<WorldEntry> ();
-	public GameObject pc;
+	private GameObject pc;
 	private int spawningOffset;
 
 
@@ -23,8 +23,8 @@ public class WorldBase : MonoBehaviour {
 
 
 	public void WorldStart (List<WorldEntry> level) {
-		spawningOffset = 15;
-
+		spawningOffset = 16;
+		pc = GameObject.FindGameObjectWithTag ("Player");
 		levelObjects = level;
 
 

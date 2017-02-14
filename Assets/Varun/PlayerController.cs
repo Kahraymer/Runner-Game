@@ -37,12 +37,19 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (jumpPhase == JumpPhase.Grounded && (Input.GetButtonDown ("Jump") || rebound)) {
+		bool jump = Input.GetButtonDown ("Jump");
+		if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) {
+			jump = true;
+		}
+
+
+
+		if (jumpPhase == JumpPhase.Grounded && (jump || rebound)) {
 			rebound = false;
 			jumpPhase = JumpPhase.PreJump;
 		}
 
-		if (jumpPhase == JumpPhase.Falling && Input.GetButtonDown ("Jump")) {
+		if (jumpPhase == JumpPhase.Falling && jump) {
 			rebound = true;
 		}
 	}
@@ -70,7 +77,8 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (jumpPhase == JumpPhase.Rising) {
-			if (airTime >= minJumpTime && !Input.GetButton("Jump")) {
+			bool letgo = Input.touchSupported ? Input.touchCount == 0 : !Input.GetButton ("Jump");
+			if (airTime >= minJumpTime && letgo) {
 				jumpPhase = JumpPhase.TerminatedRising;
 			}
 		}

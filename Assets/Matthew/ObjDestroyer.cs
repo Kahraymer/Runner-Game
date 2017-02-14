@@ -9,7 +9,7 @@ public class ObjDestroyer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        pc = GameObject.Find("PC");
+        pc = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame

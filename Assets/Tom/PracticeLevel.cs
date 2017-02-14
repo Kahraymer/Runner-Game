@@ -6,6 +6,7 @@ public class PracticeLevel : MonoBehaviour {
 
 	public GameObject ground;
 	public GameObject column;
+	public GameObject coin;
 
 
 	// Use this for initialization
@@ -28,6 +29,19 @@ public class PracticeLevel : MonoBehaviour {
 
 			entry.loc = new Vector3 (i*blockWidth, 0, 0);
 			entry.obj = ground;
+			thisLevel.Add (entry);
+		}
+
+		for (int i = 0; i < 10; i++) {
+			WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
+
+			if (i == 4) {
+				entry.loc = new Vector3 (i * 5, 3, 0);
+			} else {
+				entry.loc = new Vector3 (i*5, 1, 0);
+			}
+				
+			entry.obj = coin;
 			thisLevel.Add (entry);
 		}
 
