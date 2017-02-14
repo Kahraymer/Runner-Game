@@ -17,6 +17,8 @@ public class LevelTutorial : MonoBehaviour {
 	public GameObject coin;
 	public GameObject ud_spike;
 	public GameObject ud_tall_spike;
+	public GameObject up_gravity_pointer;
+	public GameObject down_gravity_pointer;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class LevelTutorial : MonoBehaviour {
 
 		List<WorldBase.WorldEntry> thisLevel = new List<WorldBase.WorldEntry> ();
 
-		int level_length = 300;
+		int level_length = 275;
 		// Constructing the level's components
 
 
@@ -56,8 +58,9 @@ public class LevelTutorial : MonoBehaviour {
 		float ceilingWidth = ceiling.GetComponent<BoxCollider2D> ().size.x * ceiling.transform.localScale.y; 
 		float ceilingY = ceilingWidth * 8.7f; // ceilingWidth == ceilingHeight here
 		float ceilingStart = groundWidth * 120;
+		float numCeil = (level_length - 120) * groundWidth / ceilingWidth;
 //		float ceilingHeight = ceiling.GetComponent<BoxCollider2D> ().size.y/4;
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i < numCeil; i++) {
 			WorldBase.WorldEntry ceiling_entry = new WorldBase.WorldEntry ();
 
 			ceiling_entry.loc = new Vector3 (ceilingStart + i*ceilingWidth, ceilingY, 0);
@@ -67,7 +70,7 @@ public class LevelTutorial : MonoBehaviour {
 
 
 		float spikeHeight = spike.GetComponent<BoxCollider2D> ().size.y;
-		int[] spike_locs = new int[]{ 20, 35, 85, 86, 105, 109, 113, 163, 166, 174, 176 };
+		int[] spike_locs = new int[]{ 20, 35, 90, 91, 110, 114, 118, 168, 171, 179, 181, 225, 231, 232, 250, 254, 258 };
 		foreach (int val in spike_locs) {
 			WorldBase.WorldEntry spike_entry = new WorldBase.WorldEntry ();
 			spike_entry.loc = new Vector3 (val*groundWidth, groundHeight/2 + spikeHeight/2, 0);
@@ -76,17 +79,17 @@ public class LevelTutorial : MonoBehaviour {
 		}
 
 
-		int[] taller_spike_locs = new int[]{ 50, 92, 98, 118, 194 };
+
+		int[] taller_spike_locs = new int[]{ 50, 97, 103, 123, 205, 240, 264 };
 		float tallerSpikeHeight = tall_spike.GetComponent<BoxCollider2D> ().size.y * tall_spike.transform.localScale.y;
 		foreach (int val in taller_spike_locs) {
 			WorldBase.WorldEntry taller_spike_entry = new WorldBase.WorldEntry ();
 			taller_spike_entry.obj = tall_spike;
 			taller_spike_entry.loc = new Vector3 (val*groundWidth, groundHeight/2 + tallerSpikeHeight/2, 0);
 			thisLevel.Add (taller_spike_entry);
-		}
-			
+		} 
 
-		int[] ud_spike_locs = new int[]{ 130, 135, 140, 155, 185, 190 };
+		int[] ud_spike_locs = new int[]{ 145, 150, 160, 191, 199, 209};
 		foreach (int val in ud_spike_locs) {
 			WorldBase.WorldEntry ud_spike_entry = new WorldBase.WorldEntry ();
 			ud_spike_entry.obj = ud_spike;
@@ -94,14 +97,13 @@ public class LevelTutorial : MonoBehaviour {
 			thisLevel.Add (ud_spike_entry);
 		}
 
-		int[] ud_tall_spike_locs = new int[]{ 150, 160, 170, 180};
+		int[] ud_tall_spike_locs = new int[]{ 155, 165, 175, 185};
 		foreach (int val in ud_tall_spike_locs) {
 			WorldBase.WorldEntry ud_tall_spike_entry = new WorldBase.WorldEntry ();
 			ud_tall_spike_entry.obj = ud_tall_spike;
 			ud_tall_spike_entry.loc = new Vector3 (val*groundWidth, ceilingY - ceilingWidth/2 - tallerSpikeHeight/2, 0);
 			thisLevel.Add (ud_tall_spike_entry);
 		}
-
 
 		float tooTallSpikeHeight = too_tall_spike.GetComponent<BoxCollider2D> ().size.y * too_tall_spike.transform.localScale.y;
 		WorldBase.WorldEntry too_tall_spike_entry = new WorldBase.WorldEntry ();
@@ -110,7 +112,7 @@ public class LevelTutorial : MonoBehaviour {
 		thisLevel.Add (too_tall_spike_entry);
 
 		float batteryHeight = battery.GetComponent<BoxCollider2D> ().size.y * battery.transform.localScale.y;
-		int[] battery_locs = new int[]{ 75, 122 };
+		int[] battery_locs = new int[]{ 75, 127 };
 		foreach (int val in battery_locs) {
 			WorldBase.WorldEntry battery_entry = new WorldBase.WorldEntry ();
 			battery_entry.obj = battery;
@@ -118,7 +120,7 @@ public class LevelTutorial : MonoBehaviour {
 			thisLevel.Add (battery_entry);
 		}
 
-		int[] ud_battery_locs = new int[]{ 163, 200 };
+		int[] ud_battery_locs = new int[]{ 168, 203 };
 		foreach (int val in ud_battery_locs) {
 			WorldBase.WorldEntry battery_entry = new WorldBase.WorldEntry ();
 			battery_entry.obj = battery;
@@ -126,6 +128,38 @@ public class LevelTutorial : MonoBehaviour {
 			thisLevel.Add (battery_entry);
 		}
 
+		int[] gravity_locs = new int[]{ 130, 131, 132 };
+		//		float gravityHeight = gravity_pointer.GetComponent<BoxCollider2D> ().size.y * gravity_pointer.transform.localScale.y;
+		foreach (int val in gravity_locs) {
+			for (int i = 1; i < 3; i++) {
+				WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
+				gravity_entry.obj = up_gravity_pointer;
+				gravity_entry.loc = new Vector3 (val * groundWidth, groundHeight*i, 0);
+				thisLevel.Add (gravity_entry);
+			}
+		}
+
+		int[] reverse_gravity_locs = new int[]{ 213, 214, 215 };
+		foreach (int val in reverse_gravity_locs) {
+			for (int i = 1; i < 3; i++) {
+				WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
+				gravity_entry.obj = down_gravity_pointer;
+				gravity_entry.loc = new Vector3 (val * groundWidth, ceilingY - groundHeight*i, 0);
+				thisLevel.Add (gravity_entry);
+			}
+		}
+
+		float coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
+		float[] coin_x_locs = new float[]{ taller_spike_locs [1], ud_tall_spike_locs [2], reverse_gravity_locs [2] };
+		float[] coin_y_locs = new float[]{  groundHeight/2 + tallerSpikeHeight + coinHeight/2, 
+										ceilingY - ceilingWidth/2 - tallerSpikeHeight - coinHeight/2, 
+										groundHeight/2 + coinHeight/2 };
+		for (int i = 0; i < coin_x_locs.Length; i++) {
+			WorldBase.WorldEntry coin_entry = new WorldBase.WorldEntry ();
+			coin_entry.obj = coin;
+			coin_entry.loc = new Vector3 (coin_x_locs [i] * groundWidth, coin_y_locs [i], 0);
+			thisLevel.Add (coin_entry);
+		}
 
 		// Sorting level by x position
 		thisLevel.Sort((x, y) => x.loc.x.CompareTo(y.loc.x));
