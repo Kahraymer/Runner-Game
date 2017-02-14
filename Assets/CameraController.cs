@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour {
 	public GameObject frame;
 
 	private Vector3 offset;
-	private int zoomout = 8;
+	private int zoomout = 10;
 
 	// Use this for initialization
 	void Start () {
