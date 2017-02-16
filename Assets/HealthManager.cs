@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour {
 	public AudioClip hurtSound;
@@ -42,6 +43,11 @@ public class HealthManager : MonoBehaviour {
 		immune = true;
 		lifeIndicators [health].gameObject.SetActive (false);
 		immunityTimer = 0.0f;
+
+		if (health == 0) {
+			FinalScore.score = GetComponent<ScoreKeeper> ().Score;
+			SceneManager.LoadScene ("FinalScene");
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {

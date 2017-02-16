@@ -6,7 +6,11 @@ using UnityEngine;
 public class ScoreKeeper : MonoBehaviour {
 
 	private GameObject scoreText;
+
 	private int score = 0;
+	public int Score {
+		get { return score; }
+	}
 
 	// Use this for initialization
 	void Start () {
