@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61164525276788302}
   - component: {fileID: 212910041565209148}
   - component: {fileID: 114041235447122882}
+  - component: {fileID: 60103210054971372}
   m_Layer: 0
   m_Name: TooTallWhiteColObj
   m_TagString: Untagged
@@ -36,19 +37,36 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773381458420078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.98452, y: 0.4843413, z: 0}
-  m_LocalScale: {x: 1, y: 3.19, z: 1}
+  m_LocalPosition: {x: -13.08, y: -0.05, z: 0}
+  m_LocalScale: {x: 2.56382, y: 8.86443, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60103210054971372
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773381458420078}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.43301272, y: -0.24999994}
+      - {x: 0.43301272, y: -0.25000003}
+      - {x: 0, y: 0.5}
 --- !u!61 &61164525276788302
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773381458420078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -98,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c405c95a72cca3b4fb1ae11b52ac71bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dfa4f39a163d46cfa65d699ea6ff43e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
