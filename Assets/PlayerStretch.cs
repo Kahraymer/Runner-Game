@@ -13,7 +13,8 @@ public class PlayerStretch : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float targetScale = 1.0f - 0.3f * Mathf.Clamp (rigidbody.velocity.y, 0.0f, 20.0f) / 20.0f;
+		bool inverted = GetComponent<PlayerController> ().Inverted;
+		float targetScale = 1.0f - 0.3f * Mathf.Clamp (inverted ? -rigidbody.velocity.y : rigidbody.velocity.y, 0.0f, 20.0f) / 20.0f;
 		transform.localScale = new Vector3 (targetScale , transform.localScale.y, transform.localScale.z);
 	}
 }
