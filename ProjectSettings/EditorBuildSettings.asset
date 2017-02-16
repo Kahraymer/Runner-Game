@@ -8,4 +8,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Tom/TomsScene.unity
   - enabled: 1
+    path: Assets/Monica/Start.unity
+  - enabled: 1
+    path: Assets/Monica/ComicOne.unity
+  - enabled: 1
+    path: Assets/Monica/ComicTwo.unity
+  - enabled: 1
+    path: Assets/Monica/ComicThree.unity
+  - enabled: 1
+    path: Assets/Monica/ComicFour.unity
+  - enabled: 1
     path: Assets/Tom/Tutorial.unity

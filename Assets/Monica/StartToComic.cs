@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StartToComic : MonoBehaviour {
 
-	//var levelToLoad;
-
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +12,7 @@ public class StartToComic : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "Start")) {
+		if(Input.GetButton("Start") && (SceneManager.GetActiveScene().name == "Start")) {
 			 SceneManager.LoadScene ("ComicOne", LoadSceneMode.Single);
 		}
 
