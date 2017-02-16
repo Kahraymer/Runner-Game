@@ -19,6 +19,7 @@ public class CoinScript : MonoBehaviour {
 		if (coll.gameObject.tag == "Coin") {
 			Destroy (coll.gameObject);
 			AudioSource.PlayClipAtPoint (coinCollectionSound, coll.transform.position);
+			GetComponent<ScoreKeeper> ().AddScore (5);
 		}
 	}
 }
