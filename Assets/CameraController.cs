@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		frame.transform.position = player.transform.position + new Vector3 (6, 4, -zoomout);
+		frame.transform.position = player.transform.position + new Vector3 (5, 4, -zoomout);
 		offset = transform.position + player.transform.position;
 	}
 
