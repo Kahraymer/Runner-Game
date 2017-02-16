@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61864503406126946}
   - component: {fileID: 212709417716090054}
   - component: {fileID: 114479219166247308}
+  - component: {fileID: 114602793184007896}
   m_Layer: 0
   m_Name: NormalGravityMarker
   m_TagString: Untagged
@@ -67,6 +68,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c1779847f5ea94793af54634aeb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114602793184007896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936087518204048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f46478050a4edb9489bdb231bec8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 0
 --- !u!212 &212709417716090054
 SpriteRenderer:
   m_ObjectHideFlags: 1

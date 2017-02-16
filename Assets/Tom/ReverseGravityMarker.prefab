@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 61554404146755366}
   - component: {fileID: 212354475084891388}
   - component: {fileID: 114794288965442730}
+  - component: {fileID: 114181265819975068}
   m_Layer: 0
   m_Name: ReverseGravityMarker
-  m_TagString: Untagged
+  m_TagString: ReverseGravityMarker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +57,18 @@ BoxCollider2D:
   m_Offset: {x: -0.0075683594, y: -0.0850296}
   serializedVersion: 2
   m_Size: {x: 6.04638, y: 3.9337096}
+--- !u!114 &114181265819975068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913649692757370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f46478050a4edb9489bdb231bec8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
 --- !u!114 &114794288965442730
 MonoBehaviour:
   m_ObjectHideFlags: 1

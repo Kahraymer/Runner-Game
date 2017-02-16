@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (jumpPhase == JumpPhase.PreJump) {
-			rigidBody.velocity = new Vector2 (rigidBody.velocity.x, jumpVelocity);
+			rigidBody.velocity = new Vector2 (rigidBody.velocity.x, inverted ? -jumpVelocity : jumpVelocity);
 			jumpPhase = JumpPhase.Rising;
 		}
 
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		if (rigidBody.velocity.y < 0) {
+		if (inverted ? rigidBody.velocity.y > 0 : rigidBody.velocity.y < 0) {
 			jumpPhase = JumpPhase.Falling;
 		}
 

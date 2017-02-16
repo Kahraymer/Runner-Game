@@ -154,7 +154,6 @@ MonoBehaviour:
   maxJumpHeight: 5
   maxJumpTimeToApex: 0.5
   minJumpTime: 0.1
-  inverted: 0
 --- !u!114 &114727607402211756
 MonoBehaviour:
   m_ObjectHideFlags: 1
