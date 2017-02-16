@@ -154,21 +154,21 @@ public class LevelTutorial : MonoBehaviour {
 				for (int i = 1; i < 4; i++) {
 					WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
 					gravity_entry.obj = down_gravity_pointer;
-					gravity_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - groundHeight * i, 0);
+					gravity_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - groundHeight * 2 * i / 2, 0);
 					thisLevel.Add (gravity_entry);
 				}
 			}
 
 			float coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
-			float[] coin_x_locs = new float[]{ offset + taller_spike_locs [1], offset + ud_tall_spike_locs [2], offset + reverse_gravity_locs [2] };
-			float[] coin_y_locs = new float[] {  groundHeight / 2 + tallerSpikeHeight + coinHeight / 2, 
-				ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight / 2, 
-				groundHeight / 2 + coinHeight / 2
+			float[] coin_x_locs = new float[]{ taller_spike_locs [1], ud_tall_spike_locs [2], reverse_gravity_locs [1] };
+			float[] coin_y_locs = new float[] {  groundHeight / 2 + tallerSpikeHeight + coinHeight * 3 / 2, 
+				ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight * 3 / 2, 
+				groundHeight / 2 + coinHeight * 3 / 2
 			};
 			for (int i = 0; i < coin_x_locs.Length; i++) {
 				WorldBase.WorldEntry coin_entry = new WorldBase.WorldEntry ();
 				coin_entry.obj = coin;
-				coin_entry.loc = new Vector3 (coin_x_locs [i] * groundWidth, coin_y_locs [i], 0);
+				coin_entry.loc = new Vector3 (offset + coin_x_locs [i] * groundWidth, coin_y_locs [i], 0);
 				thisLevel.Add (coin_entry);
 			}
 		}
