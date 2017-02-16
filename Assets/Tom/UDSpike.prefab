@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61551737756993328}
   - component: {fileID: 212507857816985474}
   - component: {fileID: 114790945356125388}
+  - component: {fileID: 60465342635621758}
   m_Layer: 0
   m_Name: UDSpike
   m_TagString: Untagged
@@ -37,11 +38,28 @@ Transform:
   m_GameObject: {fileID: 1387574023006934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 29.063684, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_LocalScale: {x: 2.429779, y: -2.519139, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60465342635621758
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387574023006934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.43301272, y: -0.24999994}
+      - {x: 0.43301272, y: -0.25000003}
+      - {x: 0, y: 0.5}
 --- !u!61 &61551737756993328
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -98,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c405c95a72cca3b4fb1ae11b52ac71bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dfa4f39a163d46cfa65d699ea6ff43e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
