@@ -191,6 +191,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0667ca171a9c04748ae73257ba50e84a, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &77593322 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224735542431672624, guid: 0667ca171a9c04748ae73257ba50e84a,
+    type: 2}
+  m_PrefabInternal: {fileID: 18446004}
 --- !u!1 &255829833
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +530,7 @@ GameObject:
   - component: {fileID: 697733997}
   m_Layer: 0
   m_Name: Pipe
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +544,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0.17547938, y: -0.8304022}
   serializedVersion: 2
@@ -702,6 +707,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1610956463 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224528097259876940, guid: 0667ca171a9c04748ae73257ba50e84a,
+    type: 2}
+  m_PrefabInternal: {fileID: 18446004}
 --- !u!1 &1719107243
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +855,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1802693649 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224543368112298754, guid: 0667ca171a9c04748ae73257ba50e84a,
+    type: 2}
+  m_PrefabInternal: {fileID: 18446004}
 --- !u!1 &1831832557
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +961,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114224008967670340, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: lifeIndicators.Array.data[0]
+      value: 
+      objectReference: {fileID: 1610956463}
+    - target: {fileID: 114224008967670340, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: lifeIndicators.Array.data[1]
+      value: 
+      objectReference: {fileID: 77593322}
+    - target: {fileID: 114224008967670340, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: lifeIndicators.Array.data[2]
+      value: 
+      objectReference: {fileID: 1802693649}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
   m_IsPrefabParent: 0

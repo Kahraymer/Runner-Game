@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - ReverseGravityMarker
   - ScoreText
+  - FxTemporaire
+  - Obstacle
   layers:
   - Default
   - TransparentFX
