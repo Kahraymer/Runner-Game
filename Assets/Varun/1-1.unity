@@ -638,33 +638,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b5fc579950564fa5b2cb0f2284b8b28, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &795918337 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1947842799383648, guid: 0667ca171a9c04748ae73257ba50e84a,
-    type: 2}
-  m_PrefabInternal: {fileID: 18446004}
---- !u!95 &795918338
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 795918337}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32dd47ff302964dd59e07a58bb39f97b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!224 &1009229494 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224454389459544718, guid: 0667ca171a9c04748ae73257ba50e84a,
-    type: 2}
-  m_PrefabInternal: {fileID: 18446004}
 --- !u!1 &1524397254
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,11 +946,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114432272872271898, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1009229494}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
   m_IsPrefabParent: 0
