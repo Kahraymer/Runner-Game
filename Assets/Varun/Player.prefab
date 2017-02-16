@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212656550000332252}
   - component: {fileID: 114662570323113114}
   - component: {fileID: 50042488943309476}
-  - component: {fileID: 114001938232534714}
   - component: {fileID: 114727607402211756}
   - component: {fileID: 114955941324330078}
   - component: {fileID: 70693178393094920}
@@ -126,18 +125,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &114001938232534714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1732668193349428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d070f52f85e204e3c92f4432c7581728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinCollectionSound: {fileID: 8300000, guid: 923a9c54f6a3847aa9f4557f9fcea0df, type: 3}
 --- !u!114 &114190149933009386
 MonoBehaviour:
   m_ObjectHideFlags: 1

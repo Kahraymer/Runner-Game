@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212485308614724206}
   - component: {fileID: 61012505809251748}
   - component: {fileID: 114092805867350236}
+  - component: {fileID: 114027085062569014}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -56,6 +57,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 7.94, y: 11.2300005}
+--- !u!114 &114027085062569014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461305252368596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d070f52f85e204e3c92f4432c7581728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCollectionSound: {fileID: 8300000, guid: 923a9c54f6a3847aa9f4557f9fcea0df, type: 3}
+  explosion: {fileID: 4929654485875420, guid: 014e2a4f2699848348919f4de7975351, type: 2}
 --- !u!114 &114092805867350236
 MonoBehaviour:
   m_ObjectHideFlags: 1

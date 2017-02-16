@@ -5,6 +5,9 @@ using UnityEngine;
 public class CoinScript : MonoBehaviour {
 	public AudioClip coinCollectionSound;
 
+	[Tooltip("An explosion or other particle effect to spawn at the coin when it is collected.")]
+	public Transform explosion;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,10 +19,11 @@ public class CoinScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.gameObject.tag == "Coin") {
-			Destroy (coll.gameObject);
+		if (coll.gameObject.tag == "Player") {
+			Destroy (this.gameObject);
 			AudioSource.PlayClipAtPoint (coinCollectionSound, coll.transform.position);
-			GetComponent<ScoreKeeper> ().AddScore (5);
+			GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreKeeper> ().AddScore (5);
+			Instantiate (explosion, transform.position, Quaternion.identity);
 		}
 	}
 }
