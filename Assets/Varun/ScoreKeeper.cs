@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour {
 
-	public Transform scoreText;
+	private GameObject scoreText;
 	private int score = 0;
 
 	// Use this for initialization
 	void Start () {
-		
+		scoreText = GameObject.FindGameObjectWithTag ("ScoreText");
 	}
 
 	public void AddScore(int scoreToAdd) {

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Undefined
   - Coin
+  - ReverseGravityMarker
+  - ScoreText
   layers:
   - Default
   - TransparentFX
