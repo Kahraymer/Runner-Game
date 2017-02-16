@@ -86,7 +86,9 @@ public class LevelTutorial : MonoBehaviour {
 
 
 			int[] taller_spike_locs = new int[]{ 50, 97, 103, 123, 205, 240, 264 };
-			float tallerSpikeHeight = tall_spike.GetComponent<BoxCollider2D> ().size.y * tall_spike.transform.localScale.y;
+			Vector2[] points = tall_spike.GetComponent<PolygonCollider2D> ().points;
+			float tallerSpikeHeight = points [2].y - points [0].y;
+
 			foreach (int val in taller_spike_locs) {
 				WorldBase.WorldEntry taller_spike_entry = new WorldBase.WorldEntry ();
 				taller_spike_entry.obj = tall_spike;
