@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Monica/ComicFour.unity
   - enabled: 1
     path: Assets/Tom/Tutorial.unity
+  - enabled: 1
+    path: Assets/Monica/SecondStart.unity

@@ -37,7 +37,15 @@ public class StartToComic : MonoBehaviour {
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicFour")) {
+			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
+		}
+
+		if(transitionScene && (SceneManager.GetActiveScene().name == "SecondStart")) {
 			 SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
+		}
+
+		if(transitionScene && (SceneManager.GetActiveScene().name == "FinalScene")) {
+			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
 		}
 	}
 }
