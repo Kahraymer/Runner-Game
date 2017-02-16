@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 		this.rigidBody = GetComponent<Rigidbody2D> ();
 	}
 
+	private bool inverted = false;
 	public bool Inverted {
 		get { return inverted; }
 		set { inverted = value; }
