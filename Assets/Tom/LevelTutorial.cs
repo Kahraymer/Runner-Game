@@ -163,7 +163,7 @@ public class LevelTutorial : MonoBehaviour {
 			float[] coin_x_locs = new float[]{ taller_spike_locs [1], ud_tall_spike_locs [2], reverse_gravity_locs [1] };
 			float[] coin_y_locs = new float[] {  groundHeight / 2 + tallerSpikeHeight + coinHeight * 3 / 2, 
 				ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight * 3 / 2, 
-				groundHeight / 2 + coinHeight * 3 / 2
+				groundHeight / 2 + coinHeight
 			};
 			for (int i = 0; i < coin_x_locs.Length; i++) {
 				WorldBase.WorldEntry coin_entry = new WorldBase.WorldEntry ();
