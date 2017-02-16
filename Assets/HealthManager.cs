@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour {
 	public AudioClip hurtSound;
+	public AudioClip lifeUpSound;
+
 	public static int MAX_HEALTH = 3;
 
 	[Tooltip("An array of objects that will be enabled and disabled to indicate current health.")]
@@ -54,6 +56,13 @@ public class HealthManager : MonoBehaviour {
 		if (coll.gameObject.tag == "Obstacle" && !immune) {
 			AudioSource.PlayClipAtPoint (hurtSound, transform.position);
 			TakeDamage ();
+		} else if (coll.gameObject.tag == "LifePickup") {
+			if (health < 3) {
+				++health;
+				AudioSource.PlayClipAtPoint (lifeUpSound, transform.position);
+				lifeIndicators [health - 1].gameObject.SetActive (true);
+				Destroy (coll.gameObject);
+			}
 		}
 	}
 }

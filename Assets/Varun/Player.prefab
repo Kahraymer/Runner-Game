@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtSound: {fileID: 8300000, guid: 233f7e8f6a9e2409f8ebf48c604ad134, type: 3}
+  lifeUpSound: {fileID: 8300000, guid: 79495351eeeaf4efab64512a9fb77a38, type: 3}
   lifeIndicators:
   - {fileID: 0}
   - {fileID: 0}
