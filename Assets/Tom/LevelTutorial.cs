@@ -74,8 +74,9 @@ public class LevelTutorial : MonoBehaviour {
 			}
 
 
-			float spikeHeight = spike.GetComponent<BoxCollider2D> ().size.y;
 			int[] spike_locs = new int[]{ 20, 35, 90, 91, 110, 114, 118, 168, 171, 179, 181, 225, 231, 232, 250, 254, 258 };
+			Vector2[] spoints = spike.GetComponent<PolygonCollider2D> ().points;
+			float spikeHeight = (spoints [2].y - spoints [0].y) * spike.transform.localScale.y * 2/3;
 			foreach (int val in spike_locs) {
 				WorldBase.WorldEntry spike_entry = new WorldBase.WorldEntry ();
 				spike_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight / 2 + spikeHeight / 2, 0);
@@ -86,8 +87,8 @@ public class LevelTutorial : MonoBehaviour {
 
 
 			int[] taller_spike_locs = new int[]{ 50, 97, 103, 123, 205, 240, 264 };
-			Vector2[] points = tall_spike.GetComponent<PolygonCollider2D> ().points;
-			float tallerSpikeHeight = points [2].y - points [0].y;
+			Vector2[] tspoints = tall_spike.GetComponent<PolygonCollider2D> ().points;
+			float tallerSpikeHeight = (tspoints [2].y - tspoints [0].y) * tall_spike.transform.localScale.y * 2/3;
 
 			foreach (int val in taller_spike_locs) {
 				WorldBase.WorldEntry taller_spike_entry = new WorldBase.WorldEntry ();
@@ -112,7 +113,9 @@ public class LevelTutorial : MonoBehaviour {
 				thisLevel.Add (ud_tall_spike_entry);
 			}
 
-			float tooTallSpikeHeight = too_tall_spike.GetComponent<BoxCollider2D> ().size.y * too_tall_spike.transform.localScale.y;
+
+			Vector2[] ttspoints = too_tall_spike.GetComponent<PolygonCollider2D> ().points;
+			float tooTallSpikeHeight = (ttspoints [2].y - ttspoints [0].y) * too_tall_spike.transform.localScale.y * 2/3;
 			WorldBase.WorldEntry too_tall_spike_entry = new WorldBase.WorldEntry ();
 			too_tall_spike_entry.obj = too_tall_spike;
 			too_tall_spike_entry.loc = new Vector3 (offset + 65 * groundWidth, groundHeight / 2 + tooTallSpikeHeight / 2, 0);
@@ -135,10 +138,10 @@ public class LevelTutorial : MonoBehaviour {
 				thisLevel.Add (battery_entry);
 			}
 
-			int[] gravity_locs = new int[]{ 130, 131, 132 };
+			int[] gravity_locs = new int[]{ 130, 131, 132, 133 };
 			//		float gravityHeight = gravity_pointer.GetComponent<BoxCollider2D> ().size.y * gravity_pointer.transform.localScale.y;
 			foreach (int val in gravity_locs) {
-				for (int i = 1; i < 3; i++) {
+				for (int i = 1; i < 4; i++) {
 					WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
 					gravity_entry.obj = up_gravity_pointer;
 					gravity_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight * i, 0);
@@ -146,9 +149,9 @@ public class LevelTutorial : MonoBehaviour {
 				}
 			}
 
-			int[] reverse_gravity_locs = new int[]{ 213, 214, 215 };
+			int[] reverse_gravity_locs = new int[]{ 213, 214, 215, 216 };
 			foreach (int val in reverse_gravity_locs) {
-				for (int i = 1; i < 3; i++) {
+				for (int i = 1; i < 4; i++) {
 					WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
 					gravity_entry.obj = down_gravity_pointer;
 					gravity_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - groundHeight * i, 0);
