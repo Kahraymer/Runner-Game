@@ -14,7 +14,23 @@ public class StartToComic : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButton("Next")) {
+		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "Start")) {
+			 SceneManager.LoadScene ("ComicOne", LoadSceneMode.Single);
+		}
+
+		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "ComicOne")) {
+			 SceneManager.LoadScene ("ComicTwo", LoadSceneMode.Single);
+		}
+
+		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "ComicTwo")) {
+			 SceneManager.LoadScene ("ComicThree", LoadSceneMode.Single);
+		}
+
+		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "ComicThree")) {
+			 SceneManager.LoadScene ("ComicFour", LoadSceneMode.Single);
+		}
+
+		if(Input.GetButton("Next") && (SceneManager.GetActiveScene().name == "ComicFour")) {
 			 SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
 		}
 	}
