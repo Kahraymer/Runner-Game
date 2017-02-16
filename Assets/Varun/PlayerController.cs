@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-	public Transform groundCheckTopLeft;
-	public Transform groundCheckBottomRight;
 	public LayerMask groundMask;
+
+	public Transform groundCheck;
 
 	[Tooltip("The height of a max jump.")]
 	public float maxJumpHeight;
@@ -34,6 +33,10 @@ public class PlayerController : MonoBehaviour {
 		this.rigidBody = GetComponent<Rigidbody2D> ();
 	}
 
+	public bool Inverted {
+		get { return inverted; }
+		set { inverted = value; }
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -56,6 +59,9 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate() {
 		float gravity = (-2 * maxJumpHeight) / (maxJumpTimeToApex * maxJumpTimeToApex);
+
+		if (inverted)
+			gravity *= -1;
 
 		if (jumpPhase == JumpPhase.TerminatedRising) {
 			gravity *= 3;
@@ -88,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (jumpPhase == JumpPhase.Falling) {
-			if (Physics2D.OverlapArea (groundCheckTopLeft.position, groundCheckBottomRight.position, groundMask)) {
+			if (groundCheck.GetComponent<Collider2D>().IsTouchingLayers(groundMask)) {
 				jumpPhase = JumpPhase.Grounded;
 			}
 		}
