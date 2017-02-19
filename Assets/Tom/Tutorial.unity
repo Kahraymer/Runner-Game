@@ -507,6 +507,14 @@ Prefab:
       propertyPath: lifeIndicators.Array.data[2]
       value: 
       objectReference: {fileID: 822862201}
+    - target: {fileID: 1951884856702254, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732668193349428, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
   m_IsPrefabParent: 0

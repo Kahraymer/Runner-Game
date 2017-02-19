@@ -11,7 +11,8 @@ public class WorldBase : MonoBehaviour {
 		public float offset; 	// Possibly unnecessary, optimizes for ints
 	}
 
-	public List<WorldEntry> levelObjects; // = new List<WorldEntry> ();
+	public List<WorldEntry> levelObjects;
+	public List<WorldEntry> backgroundObjects;
 	public GameObject pc;
 	private int spawningOffset;
 
@@ -30,7 +31,18 @@ public class WorldBase : MonoBehaviour {
 //		levelObjects = level;
 
 		Vector3 pcpos = pc.transform.position;
-		pc.transform.position = new Vector3 (pcpos.x, pcpos.y + 10, pcpos.z); 
+		// Actual starting position
+		pc.transform.position = new Vector3 (pcpos.x, pcpos.y + 1000, pcpos.z); 
+
+		// Testing starting position
+//		pc.transform.position = new Vector3 (pcpos.x + 420, pcpos.y, pcpos.z);
+
+		// Instantiate all the background panels, so that they'll be layered correctly
+//		foreach (WorldEntry bg in backgroundObjects) {
+//			Instantiate (bg.obj, bg.loc, Quaternion.identity);
+//		}
+
+
 		// Instantiate everything that should be on screen or will be soon
 		while (levelObjects.Count > 0) {
 			WorldEntry thisentry = levelObjects [0];
@@ -50,11 +62,24 @@ public class WorldBase : MonoBehaviour {
 		}
 	}
 
+	public void AddObjects (Dictionary<float, float> locs, GameObject obj) {
+		foreach (var elem in locs) {
+			AddObject (elem.Key, elem.Value, obj);
+		}
+	}
+
 	public void AddObject (float x, float y, GameObject obj) {
 		WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
 		entry.obj = obj;
 		entry.loc = new Vector3 (x, y, 0);
 		levelObjects.Add (entry);
+	}
+
+	public void AddBackground (float x, float y, GameObject bg) {
+		WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
+		entry.obj = bg;
+		entry.loc = new Vector3 (x, y, 0);
+		backgroundObjects.Add (entry);
 	}
 	
 	// Update is called once per frame
