@@ -23,29 +23,28 @@ public class LevelTutorial : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		WorldBase wb = GetComponent<WorldBase> ();
-
-		List<WorldBase.WorldEntry> thisLevel = new List<WorldBase.WorldEntry> ();
+		wb.levelObjects = new List<WorldBase.WorldEntry> ();
+//		List<WorldBase.WorldEntry> thisLevel = new List<WorldBase.WorldEntry> ();
 
 		int level_length = 275;
 		// Constructing the level's components
 
-		for (int round = 0; round < 10; round++) {
-			float groundWidth = ground.GetComponent<BoxCollider2D> ().size.x; 
-			float groundHeight = ground.GetComponent<BoxCollider2D> ().size.y;
+//		for (int round = 0; round < 10; round++) {
+		float groundWidth = ground.GetComponent<BoxCollider2D> ().size.x; 
+		float groundHeight = ground.GetComponent<BoxCollider2D> ().size.y;
 
-			float offset = round * level_length * groundWidth;
+//			float offset = round * level_length * groundWidth;
 		
 
-
-
-			// Adding 300 grounds to level
-			for (int i = 0; i < level_length; i++) {
-				WorldBase.WorldEntry ground_entry = new WorldBase.WorldEntry ();
-
-				ground_entry.loc = new Vector3 (offset + (i * groundWidth), 0, 0);
-				ground_entry.obj = ground;
-				thisLevel.Add (ground_entry);
-			}
+		// Adding ground
+		List<float> ground_x_locs = new List<float> ();
+		List<float> ground_y_locs = new List<float> ();
+		// Adding 300 grounds to level
+		for (int i = 0; i < level_length; i++) {
+			ground_x_locs.Add(i * 2);
+			ground_y_locs.Add(0);
+		}
+		wb.AddObjects (ground_x_locs, ground_y_locs, ground);
 
 
 //		// For background of level. I couldn't figure out the layering...
@@ -60,130 +59,107 @@ public class LevelTutorial : MonoBehaviour {
 //			thisLevel.Add (bg_entry);
 //		}
 
-			float ceilingWidth = ceiling.GetComponent<BoxCollider2D> ().size.x * ceiling.transform.localScale.y; 
-			float ceilingY = ceilingWidth * 8.7f; // ceilingWidth == ceilingHeight here
-			float ceilingStart = groundWidth * 120;
-			float numCeil = (level_length - 120) * groundWidth / ceilingWidth;
-//		float ceilingHeight = ceiling.GetComponent<BoxCollider2D> ().size.y/4;
-			for (int i = 0; i < numCeil; i++) {
-				WorldBase.WorldEntry ceiling_entry = new WorldBase.WorldEntry ();
+		// Adding ceiling
+		float ceilingWidth = ceiling.GetComponent<BoxCollider2D> ().size.x * ceiling.transform.localScale.y; 
+		float ceilingHeight = ceilingWidth;
+		float ceilingY = ceilingWidth * 8.7f; // ceilingWidth == ceilingHeight here
+		float ceilingStart = groundWidth * 120;
+		float numCeil = (level_length - 120) * groundWidth / ceilingWidth;
 
-				ceiling_entry.loc = new Vector3 (offset + ceilingStart + i * ceilingWidth, ceilingY, 0);
-				ceiling_entry.obj = ceiling;
-				thisLevel.Add (ceiling_entry);
-			}
-
-
-			int[] spike_locs = new int[]{ 20, 35, 90, 91, 110, 114, 118, 168, 171, 179, 181, 225, 231, 232, 250, 254, 258 };
-			Vector2[] spoints = spike.GetComponent<PolygonCollider2D> ().points;
-			float spikeHeight = (spoints [2].y - spoints [0].y) * spike.transform.localScale.y * 2/3;
-			foreach (int val in spike_locs) {
-				WorldBase.WorldEntry spike_entry = new WorldBase.WorldEntry ();
-				spike_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight / 2 + spikeHeight / 2, 0);
-				spike_entry.obj = spike;
-				thisLevel.Add (spike_entry);
-			}
-
-
-
-			int[] taller_spike_locs = new int[]{ 50, 97, 103, 123, 205, 240, 264 };
-			Vector2[] tspoints = tall_spike.GetComponent<PolygonCollider2D> ().points;
-			float tallerSpikeHeight = (tspoints [2].y - tspoints [0].y) * tall_spike.transform.localScale.y * 2/3;
-
-			foreach (int val in taller_spike_locs) {
-				WorldBase.WorldEntry taller_spike_entry = new WorldBase.WorldEntry ();
-				taller_spike_entry.obj = tall_spike;
-				taller_spike_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight / 2 + tallerSpikeHeight / 2, 0);
-				thisLevel.Add (taller_spike_entry);
-			} 
-
-			int[] ud_spike_locs = new int[]{ 145, 150, 160, 191, 199, 209 };
-			foreach (int val in ud_spike_locs) {
-				WorldBase.WorldEntry ud_spike_entry = new WorldBase.WorldEntry ();
-				ud_spike_entry.obj = ud_spike;
-				ud_spike_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - ceilingWidth / 2 - spikeHeight / 2, 0);
-				thisLevel.Add (ud_spike_entry);
-			}
-
-			int[] ud_tall_spike_locs = new int[]{ 155, 165, 175, 185 };
-			foreach (int val in ud_tall_spike_locs) {
-				WorldBase.WorldEntry ud_tall_spike_entry = new WorldBase.WorldEntry ();
-				ud_tall_spike_entry.obj = ud_tall_spike;
-				ud_tall_spike_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - ceilingWidth / 2 - tallerSpikeHeight / 2, 0);
-				thisLevel.Add (ud_tall_spike_entry);
-			}
-
-
-			Vector2[] ttspoints = too_tall_spike.GetComponent<PolygonCollider2D> ().points;
-			float tooTallSpikeHeight = (ttspoints [2].y - ttspoints [0].y) * too_tall_spike.transform.localScale.y * 2/3;
-			WorldBase.WorldEntry too_tall_spike_entry = new WorldBase.WorldEntry ();
-			too_tall_spike_entry.obj = too_tall_spike;
-			too_tall_spike_entry.loc = new Vector3 (offset + 65 * groundWidth, groundHeight / 2 + tooTallSpikeHeight / 2, 0);
-			thisLevel.Add (too_tall_spike_entry);
-
-			float batteryHeight = battery.GetComponent<BoxCollider2D> ().size.y * battery.transform.localScale.y;
-			int[] battery_locs = new int[]{ 75, 127 };
-			foreach (int val in battery_locs) {
-				WorldBase.WorldEntry battery_entry = new WorldBase.WorldEntry ();
-				battery_entry.obj = battery;
-				battery_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight / 2 + batteryHeight / 2, 0);
-				thisLevel.Add (battery_entry);
-			}
-
-			int[] ud_battery_locs = new int[]{ 168, 203 };
-			foreach (int val in ud_battery_locs) {
-				WorldBase.WorldEntry battery_entry = new WorldBase.WorldEntry ();
-				battery_entry.obj = battery;
-				battery_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - ceilingWidth / 2 - batteryHeight / 2, 0);
-				thisLevel.Add (battery_entry);
-			}
-
-			int[] gravity_locs = new int[]{ 130, 131, 132, 133 };
-			//		float gravityHeight = gravity_pointer.GetComponent<BoxCollider2D> ().size.y * gravity_pointer.transform.localScale.y;
-			foreach (int val in gravity_locs) {
-				for (int i = 1; i < 4; i++) {
-					WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
-					gravity_entry.obj = up_gravity_pointer;
-					gravity_entry.loc = new Vector3 (offset + val * groundWidth, groundHeight * i, 0);
-					thisLevel.Add (gravity_entry);
-				}
-			}
-
-			int[] reverse_gravity_locs = new int[]{ 213, 214, 215, 216 };
-			foreach (int val in reverse_gravity_locs) {
-				for (int i = 1; i < 4; i++) {
-					WorldBase.WorldEntry gravity_entry = new WorldBase.WorldEntry ();
-					gravity_entry.obj = down_gravity_pointer;
-					gravity_entry.loc = new Vector3 (offset + val * groundWidth, ceilingY - groundHeight * 2 * i / 2, 0);
-					thisLevel.Add (gravity_entry);
-				}
-			}
-
-			float coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
-			Dictionary<float, float> coin_locs = new Dictionary<float, float>
-			{
-				{ 27, groundHeight / 2 + coinHeight},
-				{ 112, groundHeight / 2 + coinHeight },
-				{ 116, groundHeight / 2 + coinHeight },
-				{ taller_spike_locs [1], groundHeight / 2 + tallerSpikeHeight + coinHeight * 3 / 2},
-				{ ud_tall_spike_locs [2], ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight * 3 / 2},
-				{ reverse_gravity_locs [1], groundHeight / 2 + coinHeight}
-			};
-
-			foreach (var element in coin_locs) {
-				WorldBase.WorldEntry coin_entry = new WorldBase.WorldEntry ();
-				coin_entry.obj = coin;
-				coin_entry.loc = new Vector3 (offset + element.Key * groundWidth, element.Value, 0);
-				thisLevel.Add (coin_entry);
-			}
-
+		List<float> ceiling_x_locs = new List<float> ();
+		List<float> ceiling_y_locs = new List<float> ();
+		for (float i = 0; i < numCeil; i++) {
+			ceiling_x_locs.Add (ceilingStart + i * ceilingWidth);
+			ceiling_y_locs.Add (ceilingY);
 		}
-		// Sorting level by x position
-		thisLevel.Sort ((x, y) => x.loc.x.CompareTo (y.loc.x));
+		wb.AddObjects (ceiling_x_locs, ceiling_y_locs, ceiling);
 
-		wb.WorldStart (thisLevel);
+		// Adding spikes
+		Vector2[] spoints = spike.GetComponent<PolygonCollider2D> ().points;
+		float spikeHeight = (spoints [2].y - spoints [0].y) * spike.transform.localScale.y * 2/3;
+		List<float> spike_x_locs = new List<float> {20, 35, 90, 91, 110, 114, 118, 168, 171, 179, 181, 225, 231, 232, 250, 254, 258 };
+		List<float> spike_y_locs = new List<float> ();
+		for (int i = 0; i < spike_x_locs.Count; i++) {
+			spike_x_locs[i] *= 2;
+			spike_y_locs.Add (groundHeight / 2 + spikeHeight / 2);
+		}
+		wb.AddObjects (spike_x_locs, spike_y_locs, spike);
+
+		// Adding tall spikes
+		List<float> tall_spike_x_locs = new List<float> { 50, 97, 103, 123, 205, 240, 264 };
+		Vector2[] tspoints = tall_spike.GetComponent<PolygonCollider2D> ().points;
+		float tallSpikeHeight = (tspoints [2].y - tspoints [0].y) * tall_spike.transform.localScale.y * 2/3;
+		List<float> tall_spike_y_locs = new List<float> ();
+		for (int i = 0; i < tall_spike_x_locs.Count; i++) {
+			tall_spike_x_locs[i] *= 2;
+			tall_spike_y_locs.Add (groundHeight / 2 + tallSpikeHeight / 2);
+		}
+		wb.AddObjects (tall_spike_x_locs, tall_spike_y_locs, tall_spike);
+
+		// Adding upside down spikes
+		List<float> ud_spike_x_locs = new List<float> { 145, 150, 160, 191, 199, 209 };
+		List<float> ud_spike_y_locs = new List<float> ();
+		for (int i = 0; i < ud_spike_x_locs.Count; i++) {
+			ud_spike_x_locs[i] *= 2;
+			ud_spike_y_locs.Add (ceilingY - ceilingHeight / 2 - spikeHeight / 2);
+		}
+		wb.AddObjects (ud_spike_x_locs, ud_spike_y_locs, ud_spike);
+
+		// Adding upside down tall spikes
+		List<float> ud_tall_spike_x_locs = new List<float> { 155, 165, 175, 185 };
+		List<float> ud_tall_spike_y_locs = new List<float> ();
+		for (int i = 0; i < ud_tall_spike_x_locs.Count; i++) {
+			ud_tall_spike_x_locs[i] *= 2;
+			ud_tall_spike_y_locs.Add (ceilingY - ceilingHeight / 2 - tallSpikeHeight / 2);
+		}
+		wb.AddObjects (ud_tall_spike_x_locs, ud_tall_spike_y_locs, ud_tall_spike);
+
+		// Adding unpassable spike
+		Vector2[] ttspoints = too_tall_spike.GetComponent<PolygonCollider2D> ().points;
+		float tooTallSpikeHeight = (ttspoints [2].y - ttspoints [0].y) * too_tall_spike.transform.localScale.y * 2/3;
+		wb.AddObject (65 * 2, groundHeight / 2 + tooTallSpikeHeight / 2, too_tall_spike);
+
+		// Adding batteries
+		float batteryHeight = battery.GetComponent<BoxCollider2D> ().size.y * battery.transform.localScale.y;
+		List<float> battery_x_locs = new List<float> { 150, 254, 336, 406 };
+		List<float> battery_y_locs = new List<float> { groundHeight / 2 + batteryHeight / 2, groundHeight / 2 + batteryHeight / 2,
+			ceilingY - ceilingWidth / 2 - batteryHeight / 2, ceilingY - ceilingWidth / 2 - batteryHeight / 2
+		};
+		wb.AddObjects (battery_x_locs, battery_y_locs, battery);
+
+		// Adding gravity reversers
+		List<float> gravity_up_x_locs = new List<float> { 260, 262, 264, 266 };
+		List<float> gravity_up_y_locs = new List<float> ();
+		for (int i = 1; i < 4; i++) {
+			foreach (float val in gravity_up_x_locs) {
+				gravity_up_y_locs.Add (groundHeight * i);
+			}
+			wb.AddObjects (gravity_up_x_locs, gravity_up_y_locs, up_gravity_pointer);
+			gravity_up_y_locs.Clear ();
+		}
+
+		// Adding gravity normalizers
+		List<float> gravity_down_x_locs = new List<float> { 426, 428, 430, 432 };
+		List<float> gravity_down_y_locs = new List<float> ();
+		for (int i = 1; i < 4; i++) {
+			foreach (float val in gravity_down_x_locs) {
+				gravity_down_y_locs.Add (ceilingY - groundHeight * 2 * i / 2);
+			}
+			wb.AddObjects (gravity_down_x_locs, gravity_down_y_locs, down_gravity_pointer);
+			gravity_down_y_locs.Clear ();
+		}
+
+		// Adding coins
+		float coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
+		float ground_coin = groundHeight / 2 + coinHeight;
+		List<float> coin_x_locs = new List<float> { 54, 224, 232, tall_spike_x_locs [1], ud_tall_spike_x_locs [2], gravity_down_x_locs [1]};
+		List<float> coin_y_locs = new List<float> { ground_coin, ground_coin, ground_coin, groundHeight / 2 + tallSpikeHeight + coinHeight * 3 / 2,
+			ceilingY - ceilingWidth / 2 - tallSpikeHeight - coinHeight * 3 / 2, ground_coin};
+		wb.AddObjects (coin_x_locs, coin_y_locs, coin);
+
+		wb.WorldStart ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
