@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 433261714}
   frame: {fileID: 63332749}
+  zoomout: 10
 --- !u!1 &84681920
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c882545f38cb40109f4d2013921983e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pc: {fileID: 433261714}
 --- !u!82 &84681924
 AudioSource:
   m_ObjectHideFlags: 0

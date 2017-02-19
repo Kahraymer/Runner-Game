@@ -48,7 +48,7 @@ public class PracticeLevel : MonoBehaviour {
 		// Sorting level by x position
 		thisLevel.Sort((x, y) => x.loc.x.CompareTo(y.loc.x));
 
-		wb.WorldStart (thisLevel);
+		wb.WorldStart ();
 
 
 	}
