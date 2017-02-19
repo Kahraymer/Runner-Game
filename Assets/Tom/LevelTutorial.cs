@@ -160,17 +160,23 @@ public class LevelTutorial : MonoBehaviour {
 			}
 
 			float coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
-			float[] coin_x_locs = new float[]{ taller_spike_locs [1], ud_tall_spike_locs [2], reverse_gravity_locs [1] };
-			float[] coin_y_locs = new float[] {  groundHeight / 2 + tallerSpikeHeight + coinHeight * 3 / 2, 
-				ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight * 3 / 2, 
-				groundHeight / 2 + coinHeight
+			Dictionary<float, float> coin_locs = new Dictionary<float, float>
+			{
+				{ 27, groundHeight / 2 + coinHeight},
+				{ 112, groundHeight / 2 + coinHeight },
+				{ 116, groundHeight / 2 + coinHeight },
+				{ taller_spike_locs [1], groundHeight / 2 + tallerSpikeHeight + coinHeight * 3 / 2},
+				{ ud_tall_spike_locs [2], ceilingY - ceilingWidth / 2 - tallerSpikeHeight - coinHeight * 3 / 2},
+				{ reverse_gravity_locs [1], groundHeight / 2 + coinHeight}
 			};
-			for (int i = 0; i < coin_x_locs.Length; i++) {
+
+			foreach (var element in coin_locs) {
 				WorldBase.WorldEntry coin_entry = new WorldBase.WorldEntry ();
 				coin_entry.obj = coin;
-				coin_entry.loc = new Vector3 (offset + coin_x_locs [i] * groundWidth, coin_y_locs [i], 0);
+				coin_entry.loc = new Vector3 (offset + element.Key * groundWidth, element.Value, 0);
 				thisLevel.Add (coin_entry);
 			}
+
 		}
 		// Sorting level by x position
 		thisLevel.Sort ((x, y) => x.loc.x.CompareTo (y.loc.x));
