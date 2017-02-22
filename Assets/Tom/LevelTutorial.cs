@@ -27,7 +27,7 @@ public class LevelTutorial : MonoBehaviour {
 		wb.backgroundObjects = new List<WorldBase.WorldEntry> ();
 
 
-		int level_length = 325;
+		int level_length = 360;
 		// Constructing the level's components
 
 //		for (int round = 0; round < 10; round++) {
@@ -82,7 +82,7 @@ public class LevelTutorial : MonoBehaviour {
 		wb.AddObjects (spike_x_locs, spike_y_locs, spike);
 
 		// Adding tall spikes
-		List<float> tall_spike_x_locs = new List<float> { 100, 194, 206, 246, 410, 480 };
+		List<float> tall_spike_x_locs = new List<float> { 100, 194, 206, 246, 410, 480};
 		Vector2[] tspoints = tall_spike.GetComponent<PolygonCollider2D> ().points;
 		float tallSpikeHeight = (tspoints [2].y - tspoints [0].y) * tall_spike.transform.localScale.y * 2/3;
 		List<float> tall_spike_y_locs = new List<float> ();
@@ -92,7 +92,8 @@ public class LevelTutorial : MonoBehaviour {
 		wb.AddObjects (tall_spike_x_locs, tall_spike_y_locs, tall_spike);
 
 		// Adding upside down spikes
-		List<float> ud_spike_x_locs = new List<float> { 290, 300, 320, 382, 398, 418, 516, 522, 528 };
+		List<float> ud_spike_x_locs = new List<float> { 290, 300, 320, 382, 398, 418, 516, 522, 528, 
+														585, 586, 596, 598, 608, 611, 621, 625, 635, 640 }; 
 		List<float> ud_spike_y_locs = new List<float> ();
 		for (int i = 0; i < ud_spike_x_locs.Count; i++) {
 			ud_spike_y_locs.Add (ceilingY - ceilingHeight / 2 - spikeHeight / 2);
@@ -114,29 +115,30 @@ public class LevelTutorial : MonoBehaviour {
 
 		// Adding batteries
 		float batteryHeight = battery.GetComponent<BoxCollider2D> ().size.y * battery.transform.localScale.y;
+		float ground_battery = groundHeight / 2 + batteryHeight / 2;
+		float ceiling_battery = ceilingY - ceilingWidth / 2 - batteryHeight / 2;
 		List<float> battery_x_locs = new List<float> { 150, 254, 336, 406, 545 };
-		List<float> battery_y_locs = new List<float> { groundHeight / 2 + batteryHeight / 2, groundHeight / 2 + batteryHeight / 2,
-			ceilingY - ceilingWidth / 2 - batteryHeight / 2, ceilingY - ceilingWidth / 2 - batteryHeight / 2, groundHeight / 2 + batteryHeight / 2
-		};
+		List<float> battery_y_locs = new List<float> { ground_battery, ground_battery, ceiling_battery, ceiling_battery, ground_battery};
+
 		wb.AddObjects (battery_x_locs, battery_y_locs, battery);
 
 		// Adding gravity reversers
-		List<float> gravity_up_x_locs = new List<float> { 260, 262, 264, 266 };
+		List<float> gravity_up_x_locs = new List<float> { 260, 262, 264, 266, 560, 562 };
 		List<float> gravity_up_y_locs = new List<float> ();
-		for (int i = 1; i < 4; i++) {
+		for (int i = 1; i < 5; i++) {
 			foreach (float val in gravity_up_x_locs) {
-				gravity_up_y_locs.Add (groundHeight * i);
+				gravity_up_y_locs.Add (groundHeight * (i-0.2f));
 			}
 			wb.AddObjects (gravity_up_x_locs, gravity_up_y_locs, up_gravity_pointer);
 			gravity_up_y_locs.Clear ();
 		}
 
 		// Adding gravity normalizers
-		List<float> gravity_down_x_locs = new List<float> { 426, 428, 430, 432 };
+		List<float> gravity_down_x_locs = new List<float> { 426, 428, 430, 432, 650, 652 };
 		List<float> gravity_down_y_locs = new List<float> ();
-		for (int i = 1; i < 4; i++) {
+		for (int i = 1; i < 5; i++) {
 			foreach (float val in gravity_down_x_locs) {
-				gravity_down_y_locs.Add (ceilingY - groundHeight * 2 * i / 2);
+				gravity_down_y_locs.Add (groundHeight * (i-0.2f));
 			}
 			wb.AddObjects (gravity_down_x_locs, gravity_down_y_locs, down_gravity_pointer);
 			gravity_down_y_locs.Clear ();
@@ -161,9 +163,18 @@ public class LevelTutorial : MonoBehaviour {
 			{ battery_x_locs[4] + 1, ground_coin + tallSpikeHeight + coinHeight },
 			{ 357, ceiling_coin}, {360, ceiling_coin - 2*coinHeight}, {363, ceiling_coin},
 			{ (spike_x_locs[14] + spike_x_locs[15])/2, ground_coin + tallSpikeHeight},
-			{516, (ground_coin + ceiling_coin) / 2}, {522, (ground_coin + ceiling_coin) / 2}, {528, (ground_coin + ceiling_coin) / 2}
+			{516, (ground_coin + ceiling_coin) / 2}, {522, (ground_coin + ceiling_coin) / 2}, {528, (ground_coin + ceiling_coin) / 2},
+			{ (ud_spike_x_locs[9] + ud_spike_x_locs[10])/2, ceiling_coin - tallSpikeHeight - coinHeight},
+			{ (ud_spike_x_locs[11] + ud_spike_x_locs[12])/2, ceiling_coin - tallSpikeHeight - coinHeight},
+			{ (ud_spike_x_locs[13] + ud_spike_x_locs[14])/2, ceiling_coin - tallSpikeHeight - coinHeight},
+			{ (ud_spike_x_locs[15] + ud_spike_x_locs[16])/2, ceiling_coin - tallSpikeHeight - coinHeight},
+			{ (ud_spike_x_locs[17] + ud_spike_x_locs[18])/2, ceiling_coin - tallSpikeHeight - coinHeight},
+
 		};
 		wb.AddObjects (coin_locs, coin);
+
+		GameObject end_level = GameObject.FindGameObjectWithTag ("EndLevel");
+		wb.AddObject (680, 0, end_level);
 
 		wb.WorldStart ();
 	}
