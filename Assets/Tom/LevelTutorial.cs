@@ -19,6 +19,7 @@ public class LevelTutorial : MonoBehaviour {
 	public GameObject ud_tall_spike;
 	public GameObject up_gravity_pointer;
 	public GameObject down_gravity_pointer;
+	public GameObject end_level;
 
 	// Use this for initialization
 	void Start () {
@@ -173,8 +174,7 @@ public class LevelTutorial : MonoBehaviour {
 		};
 		wb.AddObjects (coin_locs, coin);
 
-		GameObject end_level = GameObject.FindGameObjectWithTag ("EndLevel");
-		wb.AddObject (680, 0, end_level);
+		wb.AddObject (20, 0, end_level);
 
 		wb.WorldStart ();
 	}

@@ -251,6 +251,7 @@ MonoBehaviour:
     type: 2}
   down_gravity_pointer: {fileID: 1936087518204048, guid: 6aff708a2ecdd4eea8cc1b2eb7b147ad,
     type: 2}
+  end_level: {fileID: 1519053246210976, guid: ee2b877d1fa134ad0af43c8796f16fd4, type: 2}
 --- !u!114 &84681923
 MonoBehaviour:
   m_ObjectHideFlags: 0
