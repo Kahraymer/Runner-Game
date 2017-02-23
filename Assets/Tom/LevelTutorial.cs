@@ -174,7 +174,7 @@ public class LevelTutorial : MonoBehaviour {
 		};
 		wb.AddObjects (coin_locs, coin);
 
-		wb.AddObject (20, 0, end_level);
+		wb.AddObject (20, 4.8f, end_level);
 
 		wb.WorldStart ();
 	}
