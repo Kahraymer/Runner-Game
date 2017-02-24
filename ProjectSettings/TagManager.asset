@@ -4,18 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Undefined
-  - Coin
-  - ReverseGravityMarker
   - ScoreText
-  - FxTemporaire
+  - ReverseGravityMarker
   - Obstacle
+  - Coin
   - LifePickup
-<<<<<<< HEAD
-  - EndLevel
-=======
-  - LevelEnd
->>>>>>> origin/master
   layers:
   - Default
   - TransparentFX
@@ -25,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Player
+  - 
+  - 
   - 
   - 
   - 
@@ -52,10 +45,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 1712771803
-    locked: 0
-  - name: Background
-    uniqueID: 2402361749
     locked: 0

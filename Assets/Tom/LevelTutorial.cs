@@ -189,8 +189,7 @@ public class LevelTutorial : MonoBehaviour {
 		};
 		wb.AddObjects (coin_locs, coin);
 	}
-
-<<<<<<< HEAD
+		
 	private void InitConstants() {
 		groundWidth = ground.GetComponent<BoxCollider2D> ().size.x; 
 		groundHeight = ground.GetComponent<BoxCollider2D> ().size.y;
@@ -211,11 +210,6 @@ public class LevelTutorial : MonoBehaviour {
 		coinHeight = coin.GetComponent<BoxCollider2D> ().size.y * coin.transform.localScale.y;
 		ground_coin = groundHeight / 2 + coinHeight;
 		ceiling_coin = ceilingY - ceilingHeight / 2 - coinHeight;
-=======
-		wb.AddObject (20, 4.8f, end_level);
-
-		wb.WorldStart ();
->>>>>>> origin/master
 	}
 
 	// Update is called once per frame
