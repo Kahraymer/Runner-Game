@@ -11,6 +11,7 @@ TagManager:
   - FxTemporaire
   - Obstacle
   - LifePickup
+  - EndLevel
   layers:
   - Default
   - TransparentFX
