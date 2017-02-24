@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1519053246210976}
   m_IsPrefabParent: 1
+--- !u!1 &1233834856648316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4154566506660602}
+  - component: {fileID: 61812771021643504}
+  m_Layer: 0
+  m_Name: FireworksArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1519053246210976
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,17 +35,30 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4180030796958770}
-  - component: {fileID: 61866771261030872}
   - component: {fileID: 212969978042263058}
   - component: {fileID: 114484749503434780}
-  - component: {fileID: 60083425375506184}
+  - component: {fileID: 114507190043538918}
+  - component: {fileID: 61936344843076230}
   m_Layer: 0
   m_Name: LevelEnd
-  m_TagString: Obstacle
+  m_TagString: LevelEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!4 &4154566506660602
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233834856648316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4180030796958770}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4180030796958770
 Transform:
   m_ObjectHideFlags: 1
@@ -37,14 +66,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519053246210976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.08, y: -0.05, z: 0}
-  m_LocalScale: {x: 2.56382, y: 8.86443, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: -1.260943, y: -2.41482, z: 0}
+  m_LocalScale: {x: 0.688985, y: 0.688985, z: 0.688985}
+  m_Children:
+  - {fileID: 4154566506660602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60083425375506184
-PolygonCollider2D:
+--- !u!61 &61812771021643504
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233834856648316}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.22332625, y: 2.5961587}
+  serializedVersion: 2
+  m_Size: {x: 9.039711, y: 6.1923175}
+--- !u!61 &61936344843076230
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -55,25 +99,8 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.43301272, y: -0.24999994}
-      - {x: 0.43301272, y: -0.25000003}
-      - {x: 0, y: 0.5}
---- !u!61 &61866771261030872
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519053246210976}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.0066223145, y: 0.00069219864}
   serializedVersion: 2
-  m_Size: {x: 1.9929874, y: 2.0087895}
+  m_Size: {x: 7.94, y: 11.23}
 --- !u!114 &114484749503434780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +112,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c1779847f5ea94793af54634aeb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114507190043538918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519053246210976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d229aa6ee6b6a40d098ec81d8a76f8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireworks: {fileID: 400000, guid: 128e1d5f8db64394ead123313ecec398, type: 2}
+  fireworksArea: {fileID: 4154566506660602}
+  levelEndTime: 3
+  fireworkTime: 0.5
 --- !u!212 &212969978042263058
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -116,7 +158,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_Sprite: {fileID: 0}
+=======
+  m_Sprite: {fileID: 21300000, guid: c0bdb14959bc445939e27b11e3662663, type: 3}
+>>>>>>> origin/master
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
