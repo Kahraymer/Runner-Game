@@ -27,8 +27,6 @@ public class WorldBase : MonoBehaviour {
 		levelObjects.Sort ((x, y) => x.loc.x.CompareTo (y.loc.x));
 
 		spawningOffset = 18;
-//		pc = GameObject.FindGameObjectWithTag ("Player");
-//		levelObjects = level;
 
 		Vector3 pcpos = pc.transform.position;
 		// Actual starting position
@@ -47,7 +45,6 @@ public class WorldBase : MonoBehaviour {
 		while (levelObjects.Count > 0) {
 			WorldEntry thisentry = levelObjects [0];
 			if (thisentry.loc.x < spawningOffset) {
-//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
 				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
 				levelObjects.RemoveAt (0);
 			} else {
@@ -56,18 +53,27 @@ public class WorldBase : MonoBehaviour {
 		}
 	}	
 
+	// This function should be called in the specific level's script
+	// Adds GameObjects obj to level
+	// Parameters: List of x locations, List of y locations, and the game object itself
 	public void AddObjects (List<float> x_locs, List<float> y_locs, GameObject obj) {
 		for (int i = 0; i < x_locs.Count; i++) {
 			AddObject (x_locs [i], y_locs [i], obj);
 		}
 	}
 
+	// This function should be called in the specific level's script
+	// Adds GameObjects obj to level
+	// Parameters: A dictionary relating x locations to y locations, and the game object itself
 	public void AddObjects (Dictionary<float, float> locs, GameObject obj) {
 		foreach (var elem in locs) {
 			AddObject (elem.Key, elem.Value, obj);
 		}
 	}
 
+	// This function should be called in the specific level's script
+	// Adds a single GameObject obj to level
+	// Parameters: An x location float, a y location float, and the game object itself
 	public void AddObject (float x, float y, GameObject obj) {
 		WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
 		entry.obj = obj;
@@ -75,6 +81,9 @@ public class WorldBase : MonoBehaviour {
 		levelObjects.Add (entry);
 	}
 
+	// This function should be called in the specific level's script
+	// Adds background game objects to level
+	// Parameters: An x location float, a y location float, and the background gameobject itself
 	public void AddBackground (float x, float y, GameObject bg) {
 		WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
 		entry.obj = bg;
@@ -89,14 +98,10 @@ public class WorldBase : MonoBehaviour {
 
 	public void WorldUpdate () {
 		Vector3 pcPos = pc.transform.position;
-		// TODO: Make pcPos ints, not floats ?
 
-
-		// Instantiate anything that is going to be on screen soon
 		while (levelObjects.Count > 0) {
 			WorldEntry thisentry = levelObjects [0];
 			if (thisentry.loc.x < pcPos.x + spawningOffset) {
-//				Debug.Log ("Instantiate! at " + thisentry.loc.x);
 				Instantiate (thisentry.obj, thisentry.loc, Quaternion.identity);
 				levelObjects.RemoveAt (0);
 			} else {
