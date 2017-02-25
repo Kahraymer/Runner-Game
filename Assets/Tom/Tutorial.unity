@@ -251,7 +251,6 @@ MonoBehaviour:
     type: 2}
   down_gravity_pointer: {fileID: 1936087518204048, guid: 6aff708a2ecdd4eea8cc1b2eb7b147ad,
     type: 2}
-  end_level: {fileID: 1519053246210976, guid: ee2b877d1fa134ad0af43c8796f16fd4, type: 2}
 --- !u!114 &84681923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,35 +514,6 @@ Prefab:
     - target: {fileID: 1732668193349428, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 212656550000332252, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d5166ecd41c304f44ad963e020ec6872,
-        type: 3}
-    - target: {fileID: 4041768756356212, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041768756356212, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 70693178393094920, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.0080587175
-      objectReference: {fileID: 0}
-    - target: {fileID: 70693178393094920, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 1.0161232
-      objectReference: {fileID: 0}
-    - target: {fileID: 114190149933009386, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}

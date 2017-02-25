@@ -24,10 +24,5 @@ public class CameraController : MonoBehaviour {
 
 		// If you don't want the camera to follow jumps, use the line below instead:
 		frame.transform.position = new Vector3 (player.transform.position.x, 0, 0) + offset;
-
-		GameObject levelEnd = GameObject.FindGameObjectWithTag ("LevelEnd");
-		if (levelEnd != null) {
-			frame.transform.position = new Vector3 (Mathf.Min(frame.transform.position.x, levelEnd.transform.position.x), frame.transform.position.y, frame.transform.position.z);
-		}
 	}
 }
