@@ -32,15 +32,15 @@ public class WorldBase : MonoBehaviour {
 
 		Vector3 pcpos = pc.transform.position;
 		// Actual starting position
-		pc.transform.position = new Vector3 (pcpos.x, pcpos.y + 1000, pcpos.z); 
+		pc.transform.position = new Vector3 (pcpos.x, pcpos.y + 10, pcpos.z); 
 
 		// Testing starting position
 //		pc.transform.position = new Vector3 (pcpos.x + 420, pcpos.y, pcpos.z);
 
 		// Instantiate all the background panels, so that they'll be layered correctly
-//		foreach (WorldEntry bg in backgroundObjects) {
-//			Instantiate (bg.obj, bg.loc, Quaternion.identity);
-//		}
+		foreach (WorldEntry bg in backgroundObjects) {
+			Instantiate (bg.obj, bg.loc, Quaternion.identity);
+		}
 
 
 		// Instantiate everything that should be on screen or will be soon
@@ -78,7 +78,7 @@ public class WorldBase : MonoBehaviour {
 	public void AddBackground (float x, float y, GameObject bg) {
 		WorldBase.WorldEntry entry = new WorldBase.WorldEntry ();
 		entry.obj = bg;
-		entry.loc = new Vector3 (x, y, 0);
+		entry.loc = new Vector3 (x, y, 1);
 		backgroundObjects.Add (entry);
 	}
 	
