@@ -20,9 +20,13 @@ public class CoinScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Player") {
+			int multiplier = 1;
+			if (this.gameObject.tag == "SuperCoin") {
+				multiplier = 5;
+			}
 			Destroy (this.gameObject);
 			AudioSource.PlayClipAtPoint (coinCollectionSound, coll.transform.position);
-			GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreKeeper> ().AddScore (5);
+			GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreKeeper> ().AddScore (multiplier * 5);
 			Instantiate (explosion, transform.position, Quaternion.identity);
 		}
 	}
