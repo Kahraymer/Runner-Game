@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212498077012340216}
   - component: {fileID: 114424138375861890}
   - component: {fileID: 50478175731198548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FallingObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
