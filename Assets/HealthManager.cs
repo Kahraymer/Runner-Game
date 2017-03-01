@@ -47,9 +47,13 @@ public class HealthManager : MonoBehaviour {
 		immunityTimer = 0.0f;
 
 		if (health == 0) {
-			FinalScore.score = GetComponent<ScoreKeeper> ().Score;
-			SceneManager.LoadScene ("FinalScene");
+			Kill ();
 		}
+	}
+
+	public void Kill () {
+		FinalScore.score = GetComponent<ScoreKeeper> ().Score;
+		SceneManager.LoadScene ("FinalScene");
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
