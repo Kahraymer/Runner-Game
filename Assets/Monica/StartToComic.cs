@@ -11,16 +11,11 @@ public class StartToComic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Debug.LogWarning("button pressed");
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		// bool test = (Input.GetButtonDown("Start") || Input.GetButtonDown("Next") || testBool);
-		// if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) {
-		// 	test = true;
-		// }
 
 		// Keyboard functionality
 		if(transitionScene && (SceneManager.GetActiveScene().name == "Start")) {
@@ -52,8 +47,7 @@ public class StartToComic : MonoBehaviour {
 		}
 	}
 
-	public void pressthis() {
-		Debug.LogWarning("button pressed");
+	public void nextClicked() {
 		transitionScene = true;
 	}
 
