@@ -235,18 +235,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd4ebcf2e3734ae98bb06a800ed2acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
-  ground: {fileID: 0}
-  ceiling: {fileID: 0}
-  spike: {fileID: 0}
-  tall_spike: {fileID: 0}
-  too_tall_spike: {fileID: 0}
-  battery: {fileID: 0}
-  coin: {fileID: 0}
-  ud_spike: {fileID: 0}
-  ud_tall_spike: {fileID: 0}
-  up_gravity_pointer: {fileID: 0}
-  down_gravity_pointer: {fileID: 0}
+  background: {fileID: 1009084316929832, guid: a85273c237b414bd9ac498a154db99ad, type: 2}
+  ground: {fileID: 1998312698211712, guid: 359e83eb27e39174aac6ab2f1c51ea35, type: 2}
+  ceiling: {fileID: 1720558425726794, guid: 27770909efc624759b5adbc578aa2ab6, type: 2}
+  spike: {fileID: 1424419350696258, guid: 7ac2c04e1e4c5a44dbefde07454d89dc, type: 2}
+  tall_spike: {fileID: 1798661431953390, guid: 9ca93b1166e7b4af182c5cba37a80de9, type: 2}
+  too_tall_spike: {fileID: 1773381458420078, guid: 91e836af9b089402eb9005481b7644f7,
+    type: 2}
+  battery: {fileID: 1278238212138336, guid: e679558befa2445e1a2d263885ae2d31, type: 2}
+  coin: {fileID: 1461305252368596, guid: 8b5fc579950564fa5b2cb0f2284b8b28, type: 2}
+  ud_spike: {fileID: 1387574023006934, guid: c75a2709d6b6548688725b8f8a16c2e3, type: 2}
+  ud_tall_spike: {fileID: 1611524932255822, guid: 8e7361318a6b742e39137894a83ae2c1,
+    type: 2}
+  up_gravity_pointer: {fileID: 1913649692757370, guid: 22ac6341b2fcd4dccb22e5f5ede02d89,
+    type: 2}
+  down_gravity_pointer: {fileID: 1936087518204048, guid: 6aff708a2ecdd4eea8cc1b2eb7b147ad,
+    type: 2}
 --- !u!114 &84681923
 MonoBehaviour:
   m_ObjectHideFlags: 0
