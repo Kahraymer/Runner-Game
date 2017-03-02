@@ -28,9 +28,18 @@ public class PlayerController : MonoBehaviour {
 
 	private bool rebound = false;
 
+	// These two variables detect if the player ever goes off-screen
+	private float cameraHeight;
+	private float cameraWidth;
+	private Camera cam;
+
 	// Use this for initialization
 	void Start () {
 		this.rigidBody = GetComponent<Rigidbody2D> ();
+
+		cam = Camera.main;
+		cameraHeight = 2f * cam.orthographicSize;
+		cameraWidth = cameraHeight * cam.aspect;
 	}
 
 	private bool inverted = false;
@@ -55,6 +64,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (jumpPhase == JumpPhase.Falling && jump) {
 			rebound = true;
+		}
+			
+
+		// Detects if player ever falls off screen. If so, kill him!
+		if (transform.position.y < cam.transform.position.y - cameraHeight/2) {
+			this.GetComponent<HealthManager> ().Kill ();
 		}
 	}
 

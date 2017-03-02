@@ -222,7 +222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &84681922
 MonoBehaviour:
@@ -250,6 +250,8 @@ MonoBehaviour:
   up_gravity_pointer: {fileID: 1913649692757370, guid: 22ac6341b2fcd4dccb22e5f5ede02d89,
     type: 2}
   down_gravity_pointer: {fileID: 1936087518204048, guid: 6aff708a2ecdd4eea8cc1b2eb7b147ad,
+    type: 2}
+  moving_obstacle: {fileID: 1632594296324624, guid: 1158e6ada5f8d4cbfa1efc40b9daf333,
     type: 2}
 --- !u!114 &84681923
 MonoBehaviour:
@@ -490,7 +492,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4041768756356212, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114224008967670340, guid: 17c4a88d316b046a39a3c3a92b792454,
         type: 2}
@@ -514,6 +516,16 @@ Prefab:
     - target: {fileID: 1732668193349428, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662570323113114, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: groundMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727607402211756, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: startingSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
