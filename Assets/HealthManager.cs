@@ -59,10 +59,15 @@ public class HealthManager : MonoBehaviour {
 		} else if (coll.gameObject.tag == "LifePickup") {
 			if (health < 3) {
 				++health;
-				AudioSource.PlayClipAtPoint (lifeUpSound, transform.position);
 				lifeIndicators [health - 1].gameObject.SetActive (true);
-				Destroy (coll.gameObject);
 			}
+
+			// Destroy the power-up, even if at max health.
+			AudioSource.PlayClipAtPoint (lifeUpSound, transform.position);
+			Destroy (coll.gameObject);
+
+			// Add some score for picking up the life.
+			GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreKeeper> ().AddScore (5);
 		}
 	}
 }
