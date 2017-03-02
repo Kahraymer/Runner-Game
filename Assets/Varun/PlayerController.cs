@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour {
 
 	private bool rebound = false;
 
+	public bool canDoubleJump;
+	private bool secondJump = false;
+
 	// These two variables detect if the player ever goes off-screen
 	private float cameraHeight;
 	private float cameraWidth;
@@ -56,9 +59,15 @@ public class PlayerController : MonoBehaviour {
 		}
 
 
-
 		if (jumpPhase == JumpPhase.Grounded && (jump || rebound)) {
 			rebound = false;
+			secondJump = false;
+			jumpPhase = JumpPhase.PreJump;
+		} else if (canDoubleJump && !secondJump && jumpPhase != JumpPhase.Grounded && jump) {
+			airTime = 0.0f; // Reset air-time.
+
+			rebound = false;
+			secondJump = true;
 			jumpPhase = JumpPhase.PreJump;
 		}
 
