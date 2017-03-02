@@ -22,6 +22,7 @@ public class mmaulevelscript : MonoBehaviour {
 	public GameObject moving_obstacle;
 	public GameObject falling_obstacle;
 	public GameObject super_coin;
+	public GameObject nothing;
 	//	public GameObject end_level;
 
 	// Number of unity units 
@@ -50,6 +51,8 @@ public class mmaulevelscript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Copy-paste these three lines at the beginning of your level's Start() function
+		Application.targetFrameRate = 100;
+
 		WorldBase wb = GetComponent<WorldBase> ();
 		wb.levelObjects = new List<WorldBase.WorldEntry> ();
 		wb.backgroundObjects = new List<WorldBase.WorldEntry> ();
