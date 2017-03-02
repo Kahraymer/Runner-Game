@@ -14,7 +14,11 @@ public class ShootLaser : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown ("Shoot")) {
-			Instantiate (laser, transform.position, Quaternion.identity);
+			FireLaser ();
 		}
+	}
+
+	public void FireLaser() {
+		Instantiate (laser, transform.position, Quaternion.identity);
 	}
 }
