@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206736697}
   - component: {fileID: 206736698}
+  - component: {fileID: 206736699}
   m_Layer: 0
   m_Name: robot-text
   m_TagString: Untagged
@@ -155,6 +156,18 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &206736699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 206736696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1e6388f4bba4d359c556726bf474c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landingSound: {fileID: 8300000, guid: 0be26abc8bf6248c4aa71d9aa36e34d9, type: 3}
 --- !u!1 &250401872
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +429,15 @@ Prefab:
       propertyPath: m_FontData.m_BestFit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1620566179410394, guid: a8be5f599611b43d98326070672e033a, type: 2}
+      propertyPath: m_Name
+      value: play-button
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366822270758140, guid: a8be5f599611b43d98326070672e033a,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8be5f599611b43d98326070672e033a, type: 2}
   m_IsPrefabParent: 0
@@ -429,20 +451,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1081969155113228, guid: a8be5f599611b43d98326070672e033a,
     type: 2}
   m_PrefabInternal: {fileID: 876963524}
---- !u!114 &876963527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 876963526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!114 &876963528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,8 +462,8 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 0, y: -10}
+  m_EffectColor: {r: 0.983536, g: 0.99264705, b: 0.37309837, a: 0}
+  m_EffectDistance: {x: 0, y: -4}
   m_UseGraphicAlpha: 1
 --- !u!1 &876963529 stripped
 GameObject:
@@ -476,6 +484,28 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &876963537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876963529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6d83979a95c409fb47db44b7607bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &876963538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876963529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7ad0602bf9d4c55b37ae377fb75983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1401051018
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401051019}
   - component: {fileID: 1401051020}
+  - component: {fileID: 1401051021}
   m_Layer: 0
   m_Name: hole
   m_TagString: Untagged
@@ -540,6 +571,18 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1401051021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1401051018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c45d04564e304abf8128a50c9b1e2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSound: {fileID: 8300000, guid: c8edcb221d0664ea9bdd8485796b5963, type: 3}
 --- !u!1 &1796811829
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808036166}
   - component: {fileID: 1808036165}
+  - component: {fileID: 1808036167}
   m_Layer: 0
   m_Name: runaway-text
   m_TagString: Untagged
@@ -668,6 +712,18 @@ Transform:
   m_Father: {fileID: 1958068511}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808036167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808036164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1e6388f4bba4d359c556726bf474c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landingSound: {fileID: 8300000, guid: 0be26abc8bf6248c4aa71d9aa36e34d9, type: 3}
 --- !u!1 &1958068507
 GameObject:
   m_ObjectHideFlags: 0
