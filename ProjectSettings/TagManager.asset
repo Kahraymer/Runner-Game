@@ -13,6 +13,7 @@ TagManager:
   - LifePickup
   - SuperCoin
   - Ground
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
