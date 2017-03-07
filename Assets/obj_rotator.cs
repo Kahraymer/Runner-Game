@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class obj_rotator : MonoBehaviour {
+	public int RotationScaling = 1;
 
 	//private GameObject gear;
 
@@ -14,6 +15,6 @@ public class obj_rotator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	//	gear.Rotate (0, 0, Time.deltaTime, Space.World);
-		this.transform.Rotate(Vector3.forward * -1);
+		this.transform.Rotate(Vector3.forward * -1 * RotationScaling);
 	}
 }
