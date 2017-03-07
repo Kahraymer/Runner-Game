@@ -30,7 +30,7 @@ public class WorldBase : MonoBehaviour {
 
 		Vector3 pcpos = pc.transform.position;
 		// Actual starting position
-		pc.transform.position = new Vector3 (pcpos.x, pcpos.y + 10, pcpos.z); 
+		pc.transform.position = new Vector3 (pcpos.x + 920, pcpos.y + 10, pcpos.z); 
 
 		// Testing starting position
 //		pc.transform.position = new Vector3 (pcpos.x + 420, pcpos.y, pcpos.z);
