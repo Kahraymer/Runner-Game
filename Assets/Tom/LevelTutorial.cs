@@ -80,7 +80,7 @@ public class LevelTutorial : MonoBehaviour {
 
 
 //		GameObject end_level = GameObject.FindGameObjectWithTag ("LevelEnd");
-//		wb.AddObject (680, 0, end_level);
+//		wb.AddObject (1200, 0, end_level);
 
 
 		// And lastly, end your level's Start function with this last line
@@ -122,7 +122,7 @@ public class LevelTutorial : MonoBehaviour {
 	private void AddSpikes (WorldBase wb) {
 		// Adding spikes
 		List<float> spike_x_locs = new List<float> {40, 70, 180, 182, 220, 228, 236, 336, 342, 358, 362, 450, 462, 464, 500, 503, 516, 522, 528,
-													770, 785, 800, 830, 845, 860, 875, 890, 900, 910, 955, 965,} ;
+													770, 785, 800, 830, 845, 860, 875, 890, 900, 910, 955, 965, 1040, 1050, 1060, 1070, 1080, 1116, 1120} ;
 		List<float> spike_y_locs = new List<float> ();
 		for (int i = 0; i < spike_x_locs.Count; i++) {
 			spike_y_locs.Add (groundHeight / 2 + spikeHeight / 2);
@@ -130,7 +130,7 @@ public class LevelTutorial : MonoBehaviour {
 		wb.AddObjects (spike_x_locs, spike_y_locs, spike);
 
 		// Adding tall spikes
-		List<float> tall_spike_x_locs = new List<float> { 100, 194, 206, 246, 410, 480, 670, 685, 760, 814, 815, 945, 1005, 1016} ;
+		List<float> tall_spike_x_locs = new List<float> { 100, 194, 206, 246, 410, 480, 670, 685, 760, 814, 815, 945, 1005, 1016, 1090, 1104, 1180, 1195} ;
 		List<float> tall_spike_y_locs = new List<float> ();
 		for (int i = 0; i < tall_spike_x_locs.Count; i++) {
 			tall_spike_y_locs.Add (groundHeight / 2 + tallSpikeHeight / 2);
@@ -159,7 +159,8 @@ public class LevelTutorial : MonoBehaviour {
 	}
 
 	private void AddMeteors (WorldBase wb) {
-		List<float> meteor_x_locs = new List<float> { 700, 710, 716, 724, 726, 740, 742, 861, 874, 876, 890, 901, 908, 910, 912, 918, 920, 926, 931, 933, 964, 965, 1028, 1030, 1046, 1048};
+		List<float> meteor_x_locs = new List<float> { 700, 710, 716, 724, 726, 740, 742, 861, 874, 876, 890, 901, 908, 910, 912, 918, 920, 
+													926, 931, 933, 964, 965, 1028, 1030, 1046, 1048, 1126, 1127, 1134, 1142, 1144, 1160, 1162};
 		foreach (float x in meteor_x_locs) {
 			wb.AddObject (x, fallingObjectY, meteor);
 		}
@@ -167,8 +168,9 @@ public class LevelTutorial : MonoBehaviour {
 
 	private void AddBatteries (WorldBase wb) {
 		// Adding batteries
-		List<float> battery_x_locs = new List<float> { 150, 254, 336, 406, 545, 750, 852.5f, 936, 1038};
-		List<float> battery_y_locs = new List<float> { ground_battery, ground_battery, ceiling_battery, ceiling_battery, ground_battery, ground_battery, ground_battery, ground_battery, ground_battery};
+		List<float> battery_x_locs = new List<float> { 150, 254, 336, 406, 545, 750, 852.5f, 936, 1038, 1118};
+		List<float> battery_y_locs = new List<float> { ground_battery, ground_battery, ceiling_battery, ceiling_battery, ground_battery, 
+			ground_battery, ground_battery, ground_battery, ground_battery, ground_coin + tallSpikeHeight + coinHeight };
 		wb.AddObjects (battery_x_locs, battery_y_locs, battery);
 	}
 
@@ -199,7 +201,7 @@ public class LevelTutorial : MonoBehaviour {
 	private void AddCoins (WorldBase wb) {
 		// Adding coins
 		Dictionary<float, float> coin_locs = new Dictionary<float, float> {
-			{  54, ground_coin },
+			{20, ground_coin}, {25, ground_coin}, {30, ground_coin}, {  54, ground_coin },
 			{  88, ground_coin },
 			{  90, ground_coin },
 			{  92, ground_coin },
@@ -224,7 +226,8 @@ public class LevelTutorial : MonoBehaviour {
 			{837.5f, ground_coin}, {867.5f, ground_coin}, {882.5f, ground_coin},
 			{905, ground_coin}, {920, ground_coin + spikeHeight + 3 * coinHeight / 2 }, {928, ground_coin}, {940, ground_coin}, {960, ground_coin},
 			{970, ground_coin}, {975, ground_coin + spikeHeight}, {980, ground_coin}, {985, ground_coin + spikeHeight}, {990, ground_coin}, {995, ground_coin + tallSpikeHeight},
-			{1000, ground_coin}, {1032, ground_coin}, {1034, ground_coin}, {1036, ground_coin}
+			{1000, ground_coin}, {1032, ground_coin}, {1034, ground_coin}, {1036, ground_coin}, {1045, ground_coin}, {1055, ground_coin}, {1058, ground_coin},
+			{1065, ground_coin}, {1072, ground_coin}, {1075, ground_coin}, {1080, ground_coin + spikeHeight}, {1138, ground_coin}
 		} ;
 		wb.AddObjects (coin_locs, coin);
 
