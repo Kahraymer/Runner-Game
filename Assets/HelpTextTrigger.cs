@@ -7,7 +7,7 @@ public class HelpTextTrigger : MonoBehaviour {
 	public GameObject helpText;
 	public float visibleTime;
 
-	private float triggered = false;
+	private bool triggered = false;
 	private float visibleTimer = 0.0f;
 
 	// Use this for initialization
