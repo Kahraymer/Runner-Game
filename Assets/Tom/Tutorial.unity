@@ -251,8 +251,8 @@ MonoBehaviour:
     type: 2}
   down_gravity_pointer: {fileID: 1936087518204048, guid: 6aff708a2ecdd4eea8cc1b2eb7b147ad,
     type: 2}
-  moving_obstacle: {fileID: 1632594296324624, guid: 1158e6ada5f8d4cbfa1efc40b9daf333,
-    type: 2}
+  super_coin: {fileID: 1041596620478198, guid: df7a2925b139d4bde8cad92212acbe92, type: 2}
+  meteor: {fileID: 1075208241796638, guid: 270c7486bc8124ee88563c2a9d34c178, type: 2}
 --- !u!114 &84681923
 MonoBehaviour:
   m_ObjectHideFlags: 0
