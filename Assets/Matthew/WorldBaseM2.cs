@@ -22,6 +22,7 @@ public class WorldBaseM2: MonoBehaviour {
 		// Sorting level by x position
 		levelObjects.Sort ((x, y) => x.loc.x.CompareTo (y.loc.x));
 		updateWorld ();
+		pc.transform.position = new Vector3 (pc.transform.position.x + 130, 1, 0); 
 	}	
 
 	public void addEntry (float x, float y, float z, GameObject gameObject) {
