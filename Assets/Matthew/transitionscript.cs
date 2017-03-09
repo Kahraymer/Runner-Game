@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class levelM2script : WorldBaseM2 {
+public class transitionscript : WorldBaseM2 {
 	/* List of constants. */
 	private const float LVL_LENGTH = 2000; // Length of the entire level.
 	private const float START_X = -2; // Default x position for the first row of objects.
