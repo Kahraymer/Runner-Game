@@ -27,15 +27,19 @@ public class HealthManager : MonoBehaviour {
 			throw new UnityException ("Missing life indicators.");
 	}
 
+	public Sprite noDamage;
+	public Sprite lightDamage;
+	public Sprite heavyDamage;
+
 	// Update is called once per frame
 	void Update () {
 		if (immune) {
-			GetComponent<SpriteRenderer> ().enabled = (immunityTimer % 0.5) > 0.25;
+			GetComponentInChildren<SpriteRenderer> ().enabled = (immunityTimer % 0.5) > 0.25;
 
 			immunityTimer += Time.deltaTime;
 			if (immunityTimer > immunityTime) {
 				immune = false;
-				GetComponent<SpriteRenderer> ().enabled = true;
+				GetComponentInChildren<SpriteRenderer> ().enabled = true;
 			}
 		}
 	}
@@ -45,9 +49,24 @@ public class HealthManager : MonoBehaviour {
 		immune = true;
 		lifeIndicators [health].gameObject.SetActive (false);
 		immunityTimer = 0.0f;
+		UpdateSprite ();
 
 		if (health == 0) {
 			Kill ();
+		}
+	}
+
+	public void UpdateSprite() {
+		switch (health) {
+		case 3:
+			GetComponentInChildren<SpriteRenderer> ().sprite = noDamage;
+			break;
+		case 2:
+			GetComponentInChildren<SpriteRenderer> ().sprite = lightDamage;
+			break;
+		case 1:
+			GetComponentInChildren<SpriteRenderer> ().sprite = heavyDamage;
+			break;
 		}
 	}
 
@@ -64,6 +83,7 @@ public class HealthManager : MonoBehaviour {
 			if (health < 3) {
 				++health;
 				lifeIndicators [health - 1].gameObject.SetActive (true);
+				UpdateSprite ();
 			}
 
 			// Destroy the power-up, even if at max health.
