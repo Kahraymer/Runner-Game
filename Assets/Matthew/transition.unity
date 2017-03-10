@@ -319,7 +319,11 @@ MonoBehaviour:
     type: 2}
   background: {fileID: 1009084316929832, guid: a85273c237b414bd9ac498a154db99ad, type: 2}
   groundObj: {fileID: 1720558425726794, guid: 27770909efc624759b5adbc578aa2ab6, type: 2}
+  caveGrndObj: {fileID: 1720558425726794, guid: 27770909efc624759b5adbc578aa2ab6,
+    type: 2}
   ceiling: {fileID: 1720558425726794, guid: 27770909efc624759b5adbc578aa2ab6, type: 2}
+  caveCeilObj: {fileID: 1720558425726794, guid: 27770909efc624759b5adbc578aa2ab6,
+    type: 2}
   spike: {fileID: 1424419350696258, guid: 7ac2c04e1e4c5a44dbefde07454d89dc, type: 2}
   tall_spike: {fileID: 1798661431953390, guid: 9ca93b1166e7b4af182c5cba37a80de9, type: 2}
   hugeGrndObj: {fileID: 1773381458420078, guid: 91e836af9b089402eb9005481b7644f7,
@@ -331,13 +335,15 @@ MonoBehaviour:
   coin: {fileID: 1461305252368596, guid: 8b5fc579950564fa5b2cb0f2284b8b28, type: 2}
   superCoinObj: {fileID: 1041596620478198, guid: df7a2925b139d4bde8cad92212acbe92,
     type: 2}
+  emptyDropperObj: {fileID: 1845642925313460, guid: fa446c877481a0d43886c4a54a1ed71e,
+    type: 2}
   sawDropperObj: {fileID: 1308708301998424, guid: fc09d72f6a1819343b73a22202578223,
     type: 2}
   batteryDropperObj: {fileID: 1226147255921634, guid: 7e9c46adbb56f934cba5ad474a5575b7,
     type: 2}
-  up_gravity_pointer: {fileID: 1909111859083850, guid: b6f24ba244d72254fa6acd168c456849,
+  revGravHugeObj: {fileID: 1909111859083850, guid: b6f24ba244d72254fa6acd168c456849,
     type: 2}
-  down_gravity_pointer: {fileID: 1701286228448920, guid: 605ca3ca027958041aad625161c720da,
+  normGravHugeObj: {fileID: 1701286228448920, guid: 605ca3ca027958041aad625161c720da,
     type: 2}
   levelEndObj: {fileID: 1852856917283952, guid: c4eea8388e834a349950f25ace1db119,
     type: 2}
