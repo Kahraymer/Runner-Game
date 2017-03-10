@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 178577170}
   - component: {fileID: 178577172}
   - component: {fileID: 178577171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 405173554}
   - component: {fileID: 405173556}
   - component: {fileID: 405173555}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2316,7 +2316,7 @@ GameObject:
   - component: {fileID: 849318747}
   - component: {fileID: 849318749}
   - component: {fileID: 849318748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4636,7 +4636,7 @@ GameObject:
   - component: {fileID: 1754267054}
   - component: {fileID: 1754267053}
   - component: {fileID: 1754267052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 1821816071}
   - component: {fileID: 1821816070}
   - component: {fileID: 1821816069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5488,7 +5488,7 @@ GameObject:
   - component: {fileID: 2001786504}
   - component: {fileID: 2001786506}
   - component: {fileID: 2001786505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: caves_ground.svg (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
   groundCheck: {fileID: 4100951848127672}
   maxJumpHeight: 5
   maxJumpTimeToApex: 0.5
