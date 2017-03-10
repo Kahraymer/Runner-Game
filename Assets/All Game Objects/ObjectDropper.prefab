@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212448880390624038}
   - component: {fileID: 114487230469992032}
   m_Layer: 0
-  m_Name: Object Dropper
+  m_Name: ObjectDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

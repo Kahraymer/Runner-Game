@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114273235637435488}
   - component: {fileID: 50286890980766464}
   m_Layer: 8
-  m_Name: meteornocollide
+  m_Name: FallingBlockNoCollide
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

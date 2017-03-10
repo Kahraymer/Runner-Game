@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114064651075346138}
   - component: {fileID: 50155183565815380}
   m_Layer: 0
-  m_Name: BatteryToBeDropped
+  m_Name: DroppableBattery
   m_TagString: LifePickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

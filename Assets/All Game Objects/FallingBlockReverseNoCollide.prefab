@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114845076781241474}
   - component: {fileID: 50401676615887764}
   m_Layer: 8
-  m_Name: meteorrevernocol
+  m_Name: FallingBlockReverseNoCollide
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

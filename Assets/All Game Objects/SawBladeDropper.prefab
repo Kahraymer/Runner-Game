@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114407115329126602}
   - component: {fileID: 61843745675303496}
   m_Layer: 0
-  m_Name: SawDropper
+  m_Name: SawBladeDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

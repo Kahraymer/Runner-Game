@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114301973759635996}
   - component: {fileID: 114866109896933268}
   m_Layer: 0
-  m_Name: ReverseGravLrgBox
+  m_Name: ReverseGravHugeBox
   m_TagString: ReverseGravityMarker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

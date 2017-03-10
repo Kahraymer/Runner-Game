@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114488071464388140}
   - component: {fileID: 50528476852993316}
   m_Layer: 8
-  m_Name: FallingObstaclefast
+  m_Name: FallingBlockFast
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

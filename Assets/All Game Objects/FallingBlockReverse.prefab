@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114763076292736112}
   - component: {fileID: 50590747460389344}
   m_Layer: 8
-  m_Name: FallingObstacleReverse
+  m_Name: FallingBlockReverse
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
