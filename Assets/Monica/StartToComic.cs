@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class StartToComic : MonoBehaviour {
 
+	public AudioClip buttonPushSound;
+
 	bool transitionScene;
 
 	// Use this for initialization
@@ -20,30 +22,37 @@ public class StartToComic : MonoBehaviour {
 		// Keyboard functionality
 		if(transitionScene && (SceneManager.GetActiveScene().name == "Start")) {
 			 SceneManager.LoadScene ("ComicOne", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicOne")) {
 			 SceneManager.LoadScene ("ComicTwo", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicTwo")) {
 			 SceneManager.LoadScene ("ComicThree", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicThree")) {
 			 SceneManager.LoadScene ("ComicFour", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicFour")) {
 			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "SecondStart")) {
 			 SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 
 		if(transitionScene && (SceneManager.GetActiveScene().name == "FinalScene")) {
 			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position);
 		}
 	}
 

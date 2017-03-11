@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
 
 	public Transform groundCheck;
 
+	public AudioClip jumpSound;
+
 	[Tooltip("The height of a max jump.")]
 	public float maxJumpHeight;
 
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour {
 			rebound = false;
 			secondJump = false;
 			jumpPhase = JumpPhase.PreJump;
+			AudioSource.PlayClipAtPoint (jumpSound, this.rigidBody.transform.position);
 		} else if (canDoubleJump && !secondJump && jumpPhase != JumpPhase.Grounded && jump) {
 			airTime = 0.0f; // Reset air-time.
 
