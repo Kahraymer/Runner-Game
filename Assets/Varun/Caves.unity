@@ -1916,6 +1916,16 @@ Prefab:
       propertyPath: lifeIndicators.Array.data[2]
       value: 
       objectReference: {fileID: 822862201}
+    - target: {fileID: 114224008967670340, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 66265e275f34d4116a4646fbef13b570, type: 3}
+    - target: {fileID: 114662570323113114, guid: 17c4a88d316b046a39a3c3a92b792454,
+        type: 2}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fc8671cec2d4041a3a8858f22ef2634e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c4a88d316b046a39a3c3a92b792454, type: 2}
   m_IsPrefabParent: 0
