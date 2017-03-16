@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour {
 	public Transform fireworks;
 
+	public AudioClip endingJingle;
+
 	public Transform fireworksArea;
 
 	public float levelEndTime;
@@ -48,6 +50,8 @@ public class LevelEnd : MonoBehaviour {
 		if (coll.gameObject.tag == "Player" && !levelEnded) {
 			levelEnded = true;
 			SpawnFirework ();
+			AudioSource.PlayClipAtPoint (endingJingle, transform.position);
+
 		}
 	}
 }
