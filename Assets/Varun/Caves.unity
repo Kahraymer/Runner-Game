@@ -204,9 +204,9 @@ GameObject:
   m_Component:
   - component: {fileID: 84681921}
   - component: {fileID: 84681923}
-  - component: {fileID: 84681924}
   - component: {fileID: 84681922}
   - component: {fileID: 84681925}
+  - component: {fileID: 84681924}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -260,9 +260,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ca6baed611054e2b8125e5341eb222b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3a35cc8a9207c4e81b7a7ca0f76a339a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.404
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2591,6 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireworks: {fileID: 400000, guid: 128e1d5f8db64394ead123313ecec398, type: 2}
+  endingJingle: {fileID: 8300000, guid: 79e727c1d9a4c4fb994d0c5dbce7511e, type: 3}
   fireworksArea: {fileID: 733454082}
   levelEndTime: 3
   fireworkTime: 0.3
