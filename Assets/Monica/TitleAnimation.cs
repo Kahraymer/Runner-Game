@@ -8,15 +8,23 @@ public class TitleAnimation : MonoBehaviour {
 
 	private const float START_DELAY = 1.5f; // This is approx. the length of the first explosion animation
 	private const float LANDING_RATE = 0.1f;
-	private const float INIT_XY = 50;
-	private const float FINAL_XY = 27;
-	private const float Z = 1;
+	private const float INIT_XY = 20f;
+	private const float FINAL_XY = 1f;
+	private const float Z = 1f;
 	private bool text_triggered = false;
+
+	private Text txt;
+	private Color txt_color;
 		
 
 	// Use this for initialization
 	void Start () {
 		transform.localScale = new Vector3(0,0,0); // Not initially visible on the screen
+//		txt = GetComponent<Text>();
+//		Color bottomColor = Color.red;
+//		Color topColor = Color.black;
+//		Color gradient = Color32.Lerp(bottomColor, topColor, .7f);
+//		txt.color = gradient;
 	}
 
 	// Update is called once per frame
@@ -36,6 +44,6 @@ public class TitleAnimation : MonoBehaviour {
 			yield return new WaitForSeconds (LANDING_RATE);
 		}
 		transform.localScale = new Vector3 (FINAL_XY,FINAL_XY,Z);
-		AudioSource.PlayClipAtPoint(landingSound, transform.position);
+		AudioSource.PlayClipAtPoint(landingSound, transform.position, 1.0f);
 	}
 }
