@@ -123,8 +123,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (jumpPhase == JumpPhase.Falling) {
 			if (groundCheck.GetComponent<Collider2D>().IsTouchingLayers(groundMask)) {
+				SpawnPoof ();
 				jumpPhase = JumpPhase.Grounded;
 			}
 		}
+	}
+
+	public void SpawnPoof() {
 	}
 }
