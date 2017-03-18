@@ -71,6 +71,7 @@ public class HealthManager : MonoBehaviour {
 	}
 
 	public void Kill () {
+//		AudioSource.PlayClipAtPoint (gameOverSound, transform.position);
 		FinalScore.score = GetComponent<ScoreKeeper> ().Score;
 		SceneManager.LoadScene ("FinalScene");
 	}

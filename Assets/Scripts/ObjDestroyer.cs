@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjDestroyer : MonoBehaviour {
 
     private GameObject pc;
-    private int outOfFrameOffset = 30;
+    private int outOfFrameOffset = 38;
 
 	// Use this for initialization
 	void Start () {

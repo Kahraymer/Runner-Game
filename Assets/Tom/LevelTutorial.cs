@@ -24,7 +24,7 @@ public class LevelTutorial : MonoBehaviour {
 	//	public GameObject end_level;
 
 	// Number of unity units 
-	private int level_length = 1220;
+	private int level_length = 1320;
 
 	private float groundWidth;
 	private float groundHeight;
