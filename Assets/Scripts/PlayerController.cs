@@ -129,6 +129,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public Transform poof;
 	public void SpawnPoof() {
+		poof.GetComponent<ParticleSystem> ().Play ();
 	}
 }
