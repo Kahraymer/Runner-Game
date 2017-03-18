@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class transitionscript : WorldBaseM2 {
 	/* List of constants. */
-	private const float LVL_LENGTH = 900; // Length of the entire level.
+	private const float LVL_LENGTH = 1200; // Length of the entire level.
 	private const float START_X = -2; // Default x position for the first row of objects.
 	private const float DEFAULT_Y = 0; // Default y position for the bottom row of objects.
 	private const float DEFAULT_Z = 0; // Default z position for all world objects.
@@ -152,7 +152,7 @@ public class transitionscript : WorldBaseM2 {
 	/*** LEVEL END ***/
 	public GameObject levelEndObj;
 	private const float LVL_END = 350; // Where the player sees the end of level.
-	private const float LVL_END_Y = 3.75f; // Default y position for level end objects.
+	private const float LVL_END_Y = 3.6f; // Default y position for level end objects.
 
 	/*** FRAMERATE ***/
 	private const int FRAMERATE = 120; // Default framerate.
