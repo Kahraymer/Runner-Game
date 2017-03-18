@@ -20,38 +20,33 @@ public class StartToComic : MonoBehaviour {
 	void Update () {
 
 		// Keyboard functionality
-		if(transitionScene && (SceneManager.GetActiveScene().name == "Start")) {
-			 SceneManager.LoadScene ("ComicOne", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "Start")) {
+			SceneManager.LoadScene ("ComicOne", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 
-		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicOne")) {
-			 SceneManager.LoadScene ("ComicTwo", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicOne")) {
+			SceneManager.LoadScene ("ComicTwo", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 
-		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicTwo")) {
-			 SceneManager.LoadScene ("ComicThree", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicTwo")) {
+			SceneManager.LoadScene ("ComicThree", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 
-		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicThree")) {
-			 SceneManager.LoadScene ("ComicFour", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicThree")) {
+			SceneManager.LoadScene ("ComicFour", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 
-		if(transitionScene && (SceneManager.GetActiveScene().name == "ComicFour")) {
-			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicFour")) {
+			SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 
-		if(transitionScene && (SceneManager.GetActiveScene().name == "SecondStart")) {
-			 SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
-			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
-		}
-
-		if(transitionScene && (SceneManager.GetActiveScene().name == "FinalScene")) {
-			 SceneManager.LoadScene ("SecondStart", LoadSceneMode.Single);
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "FinalScene")) {
+			SceneManager.LoadScene ("WorldSelector", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
 	}

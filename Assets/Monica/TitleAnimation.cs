@@ -20,11 +20,6 @@ public class TitleAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.localScale = new Vector3(0,0,0); // Not initially visible on the screen
-//		txt = GetComponent<Text>();
-//		Color bottomColor = Color.red;
-//		Color topColor = Color.black;
-//		Color gradient = Color32.Lerp(bottomColor, topColor, .7f);
-//		txt.color = gradient;
 	}
 
 	// Update is called once per frame
