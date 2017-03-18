@@ -19,7 +19,7 @@ public class HelpTextTrigger : MonoBehaviour {
 	void Update () {
 		if (triggered) {
 			if (visibleTimer > visibleTime) {
-				helpText.SetActive (true);
+				helpText.SetActive (false);
 			} else {
 				visibleTimer += Time.deltaTime;
 			}
@@ -29,7 +29,7 @@ public class HelpTextTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (triggered == false && coll.gameObject.tag == "Player") {
 			triggered = true;
-			helpText.SetActive (false);
+			helpText.SetActive (true);
 		}
 	}
 }
