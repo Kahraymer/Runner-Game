@@ -31,15 +31,18 @@ public class HealthManager : MonoBehaviour {
 	public Sprite lightDamage;
 	public Sprite heavyDamage;
 
+	private static Color visible = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+	private static Color invisible = new Color(1.0f, 1.0f, 1.0f, 0.2f);
+
 	// Update is called once per frame
 	void Update () {
 		if (immune) {
-			GetComponentInChildren<SpriteRenderer> ().enabled = (immunityTimer % 0.5) > 0.25;
+			GetComponentInChildren<SpriteRenderer> ().color = ((immunityTimer % 0.5) > 0.25) ? visible : invisible;
 
 			immunityTimer += Time.deltaTime;
 			if (immunityTimer > immunityTime) {
 				immune = false;
-				GetComponentInChildren<SpriteRenderer> ().enabled = true;
+				GetComponentInChildren<SpriteRenderer> ().color = visible;
 			}
 		}
 	}
