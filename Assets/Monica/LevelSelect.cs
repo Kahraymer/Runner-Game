@@ -8,7 +8,7 @@ public class LevelSelect : MonoBehaviour {
 
 	bool cityTransition = false;
 	bool caveTransition = false;
-	bool otherTransition = false;
+	bool factoryTransition = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +26,8 @@ public class LevelSelect : MonoBehaviour {
 			SceneManager.LoadScene ("Varun/Caves", LoadSceneMode.Single);
 		}
 
-		if(otherTransition) {
-			SceneManager.LoadScene ("Matthew/transition", LoadSceneMode.Single);
+		if(factoryTransition) {
+			SceneManager.LoadScene ("Matthew/factory", LoadSceneMode.Single);
 		}
 		
 	}
@@ -40,7 +40,7 @@ public class LevelSelect : MonoBehaviour {
 		caveTransition = true;
 	}
 
-	public void otherLevelClicked() {
-		otherTransition = true;
+	public void factoryLevelClicked() {
+		factoryTransition = true;
 	}
 }
