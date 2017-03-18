@@ -47,7 +47,11 @@ public class HealthManager : MonoBehaviour {
 		}
 	}
 
+	public Transform spark;
+
 	void TakeDamage() {
+		spark.GetComponent<ParticleSystem> ().Play ();
+
 		health--;
 		immune = true;
 		lifeIndicators [health].gameObject.SetActive (false);
