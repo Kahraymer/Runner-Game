@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247ba35c52161404a980be89f5d6827d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPushSound: {fileID: 8300000, guid: 651ef610f7ff340c38a83ed50f5d1304, type: 3}
+  buttonPushSound: {fileID: 0}
 --- !u!114 &550516755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL END
+  m_Text: YOU WIN
 --- !u!222 &1427380783
 CanvasRenderer:
   m_ObjectHideFlags: 0
