@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212954717007659158}
   - component: {fileID: 61314307832682268}
   - component: {fileID: 114918674891141456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CeilingBlock
   m_TagString: Ground
   m_Icon: {fileID: 0}

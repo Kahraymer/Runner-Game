@@ -687,11 +687,6 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114662570323113114, guid: 17c4a88d316b046a39a3c3a92b792454,
-        type: 2}
-      propertyPath: groundMask.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114727607402211756, guid: 17c4a88d316b046a39a3c3a92b792454,
         type: 2}
       propertyPath: startingSpeed
