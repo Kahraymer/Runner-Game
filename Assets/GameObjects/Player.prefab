@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 198031505074833198}
   - component: {fileID: 199958626095671418}
   - component: {fileID: 114954133596183070}
+  - component: {fileID: 114208701512637208}
   m_Layer: 0
   m_Name: Smoking
   m_TagString: Untagged
@@ -268,6 +269,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6eeeff0f5909d4744a068bd8db354387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114208701512637208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402219587170234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bc31220019443b4aa722fa89815347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114224008967670340
@@ -2887,10 +2899,10 @@ ParticleSystem:
       m_PostInfinity: 2
       m_RotationOrder: 4
     minMaxState: 0
-  moveWithTransform: 0
-  moveWithCustomTransform: {fileID: 0}
+  moveWithTransform: 2
+  moveWithCustomTransform: {fileID: 4113118355164648}
   scalingMode: 2
-  randomSeed: 911526862
+  randomSeed: -1448546034
   InitialModule:
     serializedVersion: 3
     enabled: 1
