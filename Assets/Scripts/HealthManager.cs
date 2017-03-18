@@ -56,6 +56,8 @@ public class HealthManager : MonoBehaviour {
 		}
 	}
 
+	public Transform smoke;
+
 	public void UpdateSprite() {
 		switch (health) {
 		case 3:
@@ -67,6 +69,12 @@ public class HealthManager : MonoBehaviour {
 		case 1:
 			GetComponentInChildren<SpriteRenderer> ().sprite = heavyDamage;
 			break;
+		}
+
+		if (health == 1) {
+			smoke.GetComponent<ParticleSystem> ().Play ();
+		} else {
+			smoke.GetComponent<ParticleSystem> ().Stop ();
 		}
 	}
 
