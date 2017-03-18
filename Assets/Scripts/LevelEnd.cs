@@ -30,7 +30,7 @@ public class LevelEnd : MonoBehaviour {
 			fireworkTimer += Time.deltaTime;
 
 			if (levelEndTimer > levelEndTime) {
-				SceneManager.LoadScene ("FinalScene");
+				SceneManager.LoadScene ("FinalSceneWin");
 			}
 
 			if (fireworkTimer > fireworkTime) {

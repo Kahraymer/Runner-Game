@@ -20,6 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monica/FinalScene.unity
   - enabled: 1
+    path: Assets/Monica/FinalSceneWin.unity
+  - enabled: 1
     path: Assets/Monica/WorldSelector.unity
   - enabled: 1
     path: Assets/Matthew/factory.unity
