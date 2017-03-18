@@ -9,7 +9,7 @@ public class TitleAnimation : MonoBehaviour {
 	private const float START_DELAY = 1.5f; // This is approx. the length of the first explosion animation
 	private const float LANDING_RATE = 0.1f;
 	private const float INIT_XY = 20f;
-	private const float FINAL_XY = 1f;
+	private const float FINAL_XY = .6f;
 	private const float Z = 1f;
 	private bool text_triggered = false;
 
