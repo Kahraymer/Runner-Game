@@ -7,7 +7,7 @@ public class TitleAnimation : MonoBehaviour {
 	public AudioClip landingSound;
 
 	private const float START_DELAY = 1.5f; // This is approx. the length of the first explosion animation
-	private const float LANDING_RATE = 0.1f;
+	private const float ANIMATION_LENGTH = 0.5f;
 	private const float INIT_XY = 20f;
 	private const float FINAL_XY = 1f;
 	private const float Z = 1f;
@@ -33,10 +33,12 @@ public class TitleAnimation : MonoBehaviour {
 	IEnumerator landingText() {
 		yield return new WaitForSeconds (START_DELAY);
 		transform.localScale = new Vector3(INIT_XY,INIT_XY,Z);
-		float diff = INIT_XY - FINAL_XY;
-		for (int i = 5; i >= 1; i--) {
-			transform.localScale = new Vector3 (INIT_XY - diff/i,INIT_XY - diff/i,Z);
-			yield return new WaitForSeconds (LANDING_RATE);
+
+		float animationStart = Time.time;
+		while (Time.time < animationStart + ANIMATION_LENGTH) {
+			float scale = Mathf.Lerp (INIT_XY, FINAL_XY, (Time.time - animationStart)/ANIMATION_LENGTH);
+			transform.localScale = new Vector3 (scale, scale,Z);
+			yield return new WaitForEndOfFrame ();
 		}
 		transform.localScale = new Vector3 (FINAL_XY,FINAL_XY,Z);
 		AudioSource.PlayClipAtPoint(landingSound, transform.position, 1.0f);
