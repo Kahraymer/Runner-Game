@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireworks: {fileID: 400000, guid: 128e1d5f8db64394ead123313ecec398, type: 2}
   endingJingle: {fileID: 8300000, guid: 79e727c1d9a4c4fb994d0c5dbce7511e, type: 3}
+  endingFirework: {fileID: 8300000, guid: c8edcb221d0664ea9bdd8485796b5963, type: 3}
   fireworksArea: {fileID: 4871970627198228}
   levelEndTime: 3
   fireworkTime: 0.3
