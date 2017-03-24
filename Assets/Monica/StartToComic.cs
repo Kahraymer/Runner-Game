@@ -36,14 +36,14 @@ public class StartToComic : MonoBehaviour {
 		}
 
 		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicThree")) {
-			SceneManager.LoadScene ("ComicFour", LoadSceneMode.Single);
-			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
-		}
-
-		if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicFour")) {
 			SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
+
+	/*	if (transitionScene && (SceneManager.GetActiveScene ().name == "ComicFour")) {
+			SceneManager.LoadScene ("Tom/Tutorial", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
+		}*/
 
 		if (transitionScene && (SceneManager.GetActiveScene ().name == "FinalScene")) {
 			SceneManager.LoadScene ("WorldSelector", LoadSceneMode.Single);
