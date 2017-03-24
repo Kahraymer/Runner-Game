@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour {
+
 	public Transform fireworks;
 
 	public AudioClip endingJingle;
@@ -17,6 +18,10 @@ public class LevelEnd : MonoBehaviour {
 
 	public float fireworkTime;
 	private float fireworkTimer = 0.0f;
+
+	public bool LevelEnded {
+		get { return levelEnded; }
+	}
 
 	// Use this for initialization
 	void Start () {
