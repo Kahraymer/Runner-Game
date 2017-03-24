@@ -155,7 +155,7 @@ public class LevelTutorial : MonoBehaviour {
 		wb.AddObjects (ud_tall_spike_x_locs, ud_tall_spike_y_locs, ud_tall_spike);
 
 		// Adding unpassable spike
-		wb.AddObject (65 * 2, groundHeight / 2 + tooTallSpikeHeight / 2, too_tall_spike);
+		wb.AddObject (65 * 2, groundHeight / 2 + tallSpikeHeight / 2, tall_spike);
 	}
 
 	private void AddMeteors (WorldBase wb) {
