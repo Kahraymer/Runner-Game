@@ -22,4 +22,12 @@ public class GoToMainMenu : MonoBehaviour {
 			Destroy (menuMusic);
 		}
 	}
+
+	public void GoToCredits() {
+		SceneManager.LoadScene ("Credits", LoadSceneMode.Single);
+		GameObject menuMusic = GameObject.FindGameObjectWithTag ("MenuMusic");
+		if (menuMusic) {
+			Destroy (menuMusic);
+		}
+	}
 }

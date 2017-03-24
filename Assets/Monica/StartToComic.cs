@@ -54,6 +54,11 @@ public class StartToComic : MonoBehaviour {
 			SceneManager.LoadScene ("WorldSelector", LoadSceneMode.Single);
 			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
 		}
+
+		if (transitionScene && (SceneManager.GetActiveScene ().name == "Credits")) {
+			SceneManager.LoadScene ("WorldSelector", LoadSceneMode.Single);
+			AudioSource.PlayClipAtPoint (buttonPushSound, transform.position, 1.0f);
+		}
 	}
 
 	public void nextClicked() {
