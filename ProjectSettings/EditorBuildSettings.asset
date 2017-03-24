@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Matthew/factory.unity
   - enabled: 1
     path: Assets/Varun/Caves.unity
+  - enabled: 1
+    path: Assets/Credits.unity
