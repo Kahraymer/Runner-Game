@@ -141,7 +141,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 0}
+  m_BackGroundColor: {r: 0.1102941, g: 0.1102941, b: 0.1102941, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -471,7 +471,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1b819f03aa6ad7f468362b77fd08ed96, type: 3}
-  m_Color: {r: 0.63235295, g: 0.63235295, b: 0.63235295, a: 1}
+  m_Color: {r: 0.3602941, g: 0.3602941, b: 0.3602941, a: 1}
   m_FlipX: 1
   m_FlipY: 0
 --- !u!1 &480167175
@@ -920,6 +920,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1b819f03aa6ad7f468362b77fd08ed96, type: 3}
-  m_Color: {r: 0.63235295, g: 0.63235295, b: 0.63235295, a: 1}
+  m_Color: {r: 0.3602941, g: 0.3602941, b: 0.3602941, a: 1}
   m_FlipX: 0
   m_FlipY: 0
