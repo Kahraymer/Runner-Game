@@ -1586,15 +1586,6 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 433261719}
-    - target: {fileID: 114414504425315978, guid: 0667ca171a9c04748ae73257ba50e84a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365256173675406, guid: 0667ca171a9c04748ae73257ba50e84a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0667ca171a9c04748ae73257ba50e84a, type: 2}
   m_IsPrefabParent: 0
@@ -2649,6 +2640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireworks: {fileID: 400000, guid: 128e1d5f8db64394ead123313ecec398, type: 2}
   endingJingle: {fileID: 8300000, guid: 79e727c1d9a4c4fb994d0c5dbce7511e, type: 3}
+  endingFirework: {fileID: 8300000, guid: c8edcb221d0664ea9bdd8485796b5963, type: 3}
   fireworksArea: {fileID: 733454082}
   levelEndTime: 3
   fireworkTime: 0.3

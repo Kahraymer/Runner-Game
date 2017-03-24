@@ -9,6 +9,8 @@ public class LevelEnd : MonoBehaviour {
 
 	public AudioClip endingJingle;
 
+	public AudioClip endingFirework;
+
 	public Transform fireworksArea;
 
 	public float levelEndTime;
@@ -49,6 +51,7 @@ public class LevelEnd : MonoBehaviour {
 		Bounds bounds = fireworksArea.GetComponent<BoxCollider2D> ().bounds;
 		Vector3 position = bounds.min + new Vector3 (Random.value * bounds.size.x, Random.value * bounds.size.y, Random.value * bounds.size.z);
 		Instantiate (fireworks, position, Quaternion.identity);
+		AudioSource.PlayClipAtPoint (endingFirework, position);
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
