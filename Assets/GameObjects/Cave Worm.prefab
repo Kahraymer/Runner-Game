@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4736182307247372}
   - component: {fileID: 212350844092088166}
   m_Layer: 0
-  m_Name: cave_worm_hook.svg
+  m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4996450390651182}
   - component: {fileID: 212234786710387046}
+  - component: {fileID: 61009819230074312}
+  - component: {fileID: 114805345144867168}
   m_Layer: 0
-  m_Name: coin.svg
+  m_Name: Bait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,9 +54,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4228227005633274}
   - component: {fileID: 212304749099432088}
+  - component: {fileID: 61572780549707588}
+  - component: {fileID: 114203857292732320}
   m_Layer: 0
   m_Name: Cave Worm
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744188591352404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 264.49, y: -1.21, z: 0}
+  m_LocalPosition: {x: 109.4, y: -1.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4996450390651182}
@@ -100,6 +104,58 @@ Transform:
   m_Father: {fileID: 4228227005633274}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61009819230074312
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438212006395982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 7.9399996, y: 11.229999}
+--- !u!61 &61572780549707588
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744188591352404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.1040802, y: -1.6031584}
+  serializedVersion: 2
+  m_Size: {x: 5.691431, y: 8.023683}
+--- !u!114 &114203857292732320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744188591352404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85443f6f524504622a5e92d3e5f3322e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 6, z: 0}
+  animationTime: 0.3
+--- !u!114 &114805345144867168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438212006395982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe35c204ad05421586d2cbe3ee2eaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212234786710387046
 SpriteRenderer:
   m_ObjectHideFlags: 1
