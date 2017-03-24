@@ -40,6 +40,7 @@ public class TitleAnimation : MonoBehaviour {
 			transform.localScale = new Vector3 (scale, scale,Z);
 			yield return new WaitForEndOfFrame ();
 		}
+		Camera.main.SendMessage ("Shake", 0.5f);
 		transform.localScale = new Vector3 (FINAL_XY,FINAL_XY,Z);
 		AudioSource.PlayClipAtPoint(landingSound, transform.position, 1.0f);
 	}
