@@ -21,6 +21,7 @@ public class ScoreKeeper : MonoBehaviour {
 		score += scoreToAdd;
 		scoreText.GetComponent<Text> ().text = score.ToString().PadLeft (4, '0');
 		scoreText.GetComponent<Animator> ().SetTrigger("Pulse");
+		FinalScore.score = score;
 	}
 	
 	// Update is called once per frame
